@@ -1,0 +1,92 @@
+{
+  "folders": [
+    {
+      "name": "ggplot",
+      "parentId": "DQZWqrP5",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "zAD0JuNa",
+      "createdAt": 1667787753934,
+      "updatedAt": 1667787761434,
+      "index": 0
+    },
+    {
+      "name": "dplyr",
+      "parentId": "DQZWqrP5",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "jjCg8GIM",
+      "createdAt": 1667787764774,
+      "updatedAt": 1667787781349,
+      "index": 1
+    },
+    {
+      "name": "RStudio",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "DQZWqrP5",
+      "createdAt": 1667787402933,
+      "updatedAt": 1667787409790,
+      "index": 0
+    },
+    {
+      "name": "Terminal",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "kUTrDM6K",
+      "createdAt": 1667787411771,
+      "updatedAt": 1667787786847,
+      "index": 1
+    }
+  ],
+  "snippets": [
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "IyXoXMjs",
+        "qTFPD5R4",
+        "1dqvUQaB"
+      ],
+      "description": "Code for downloading websites as .html files",
+      "name": "wget",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "brew install wget\n\n##### Download data\nwget -O YOUR-FILENAME.html URL\nwget -P path/to/save/files URL"
+        }
+      ],
+      "id": "h72dK0kS",
+      "createdAt": 1667787465004,
+      "updatedAt": 1667787801020
+    }
+  ],
+  "tags": [
+    {
+      "name": "web scraping",
+      "id": "IyXoXMjs",
+      "createdAt": 1667787604172,
+      "updatedAt": 1667787604172
+    },
+    {
+      "name": "wget",
+      "id": "qTFPD5R4",
+      "createdAt": 1667787609196,
+      "updatedAt": 1667787609196
+    },
+    {
+      "name": "terminal",
+      "id": "1dqvUQaB",
+      "createdAt": 1667787611504,
+      "updatedAt": 1667787611504
+    }
+  ]
+}
