@@ -1,47 +1,25 @@
 {
   "folders": [
     {
-      "name": "ggplot",
-      "parentId": "DQZWqrP5",
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "plain_text",
-      "id": "zAD0JuNa",
-      "createdAt": 1667787753934,
-      "updatedAt": 1667787761434,
-      "index": 0
-    },
-    {
-      "name": "dplyr",
-      "parentId": "DQZWqrP5",
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "plain_text",
-      "id": "jjCg8GIM",
-      "createdAt": 1667787764774,
-      "updatedAt": 1667787781349,
-      "index": 1
-    },
-    {
       "name": "RStudio",
       "parentId": null,
       "isOpen": true,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "r",
       "id": "DQZWqrP5",
       "createdAt": 1667787402933,
-      "updatedAt": 1667787409790,
+      "updatedAt": 1667850231286,
       "index": 0
     },
     {
-      "name": "Terminal",
+      "name": "Commands",
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "markdown",
       "id": "kUTrDM6K",
       "createdAt": 1667787411771,
-      "updatedAt": 1667787786847,
+      "updatedAt": 1668023356756,
       "index": 1
     }
   ],
@@ -52,21 +30,192 @@
       "folderId": "kUTrDM6K",
       "tagsIds": [
         "IyXoXMjs",
-        "qTFPD5R4",
-        "1dqvUQaB"
+        "ZuysXm8A"
       ],
-      "description": "Code for downloading websites as .html files",
+      "description": "Code for downloading websites as .html files.",
       "name": "wget",
       "content": [
         {
-          "label": "Fragment 1",
-          "language": "c_cpp",
-          "value": "brew install wget\n\n##### Download data\nwget -O YOUR-FILENAME.html URL\nwget -P path/to/save/files URL"
+          "label": "commands",
+          "language": "markdown",
+          "value": "# install\nbrew install wget\n\n# code\nwget -O YOUR-FILENAME.html URL\nwget -P path/to/save/files URL"
+        },
+        {
+          "label": "example",
+          "language": "markdown",
+          "value": "# example\nwget -P /Users/jtorrensh/Desktop/wget https://portalanterior.ine.mx/documentos/RESELEC/estadisticas2003/diputados_mr/casillas/1-01.html"
         }
       ],
       "id": "h72dK0kS",
       "createdAt": 1667787465004,
-      "updatedAt": 1667787801020
+      "updatedAt": 1668233810273
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": "Code for loading packages and importing primary data/source into Rstudio.",
+      "name": "load packages",
+      "content": [
+        {
+          "label": "install.packages()",
+          "language": "r",
+          "value": "#-----\n\n## last-update: \n### José Ángel Torrens Hernández\n\n#------\n# install packages\ninstall.packages(\"colortools\")\ninstall.packages(\"corrplot\")\ninstall.packages(\"corrr\")\ninstall.packages(\"data.table\")\ninstall.packages(\"dplyr\")\ninstall.packages(\"fmsb\")\ninstall.packages(\"ggplot2\")\ninstall.packages(\"ggpubr\")\ninstall.packages(\"ggradar\")\ninstall.packages(\"ggrepel\")\ninstall.packages(\"hrbrthemes\")\ninstall.packages(\"janitor\")\ninstall.packages(\"mxmaps\")\ninstall.packages(\"palmerpenguins\")\ninstall.packages(\"RColorBrewer\")\ninstall.packages(\"readxl\")\ninstall.packages(\"scales\")\ninstall.packages(\"stargazer\")\ninstall.packages(\"stringr\")\ninstall.packages(\"unikn\")\ninstall.packages(\"viridis\")"
+        },
+        {
+          "label": "library()",
+          "language": "r",
+          "value": "# library\nlibrary(colortools)\nlibrary(corrplot)\nlibrary(corrr)\nlibrary(data.table)\nlibrary(dplyr)\nlibrary(fmsb)\nlibrary(ggplot2)\nlibrary(ggpubr)\nlibrary(ggradar)\nlibrary(ggrepel)\nlibrary(hrbrthemes)\nlibrary(janitor)\nlibrary(mxmaps)\nlibrary(palmerpenguins)\nlibrary(RColorBrewer)\nlibrary(readxl)\nlibrary(scales)\nlibrary(stargazer)\nlibrary(stringr)\nlibrary(unikn)\nlibrary(viridis)"
+        },
+        {
+          "label": "data",
+          "language": "r",
+          "value": "# import data\ndata.name <-  read.csv(\"path/to/file\") \n\nsource(\"path/to/theme.R\")\n\n#------"
+        },
+        {
+          "label": "data as date",
+          "language": "r",
+          "value": "# import data\ndata <- read.csv((\"path/to/file\") ,\n                stringsAsFactors=FALSE)\ndata$date <- as.Date(data$date, format = \"%d/%m/%y\")\n\nsource(\"path/to/theme.R\")\n\n#------"
+        }
+      ],
+      "id": "trWQpM5O",
+      "createdAt": 1667794687865,
+      "updatedAt": 1668233653493
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "ZuysXm8A",
+        "CAuKhm2A"
+      ],
+      "description": "Let’s Git Started -- Beginner’s Guide to Git & Github",
+      "name": "git",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n  % ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# Undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# Discards all history and changes back to the specified commit\ngit reset --hard [commit]\n\n# forzar un push (cuando se borra un commit local)\n## Revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force"
+        }
+      ],
+      "id": "rd2lTa0N",
+      "createdAt": 1667826253726,
+      "updatedAt": 1668233892595
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": "The unikn package provides useful color functions — by defining dedicated colors and color palettes, and commands for finding, changing, viewing, and using them — and styled text elements (e.g., for marking, underlining, or plotting colored titles) in R.",
+      "name": "colors-palette",
+      "content": [
+        {
+          "label": "code",
+          "language": "r",
+          "value": "#-----\nlibrary(unikn)\n\n# define colors and color names -- as vectors\npaleta.colores <- c(\"#000000\", # color 1\n\t\t\t\t\t\t\t\t\t\t\"#000000\", # color 2\n                    \"#000000\") # coolor 3\n\npaleta.degradado <- usecol(c(\"#000000\", \"#000000\", \"#000000\"), n = 4)\n\n# see color palettes\nseecol(paleta.colores, \t\t\t# a color palette\n\t\t\t col_brd = \"white\", \t# color and width of borders\n       lwd_brd = 5, \t\t\t\t\n       title = \"\") \t\t\t\t\t# plot title"
+        },
+        {
+          "label": "example code",
+          "language": "r",
+          "value": "# example code\ncolor_google <- c(\"#4285f4\", \"#34a853\", \"#fbbc05\", \"#ea4335\")\nnames_google <- c(\"blueberry\", \"sea green\", \"selective yellow\", \"cinnabar\")\n\npal_google <- newpal(color_google, names_google)\n\n# inspect color palette\nseecol(pal_google, \n       col_brd = \"white\", lwd_brd = 8,\n       main = \"Colors of the Google logo\")\n       \nolives  <- grepal(\"olive\", plot = FALSE)\noranges <- grepal(\"orange\", plot = FALSE)\n\n# see color palettes -- more than 1 palette\nseecol(pal = list(olives, oranges), \n       pal_names = c(\"olives\", \"oranges\"), \n       main = \"Comparing olives with oranges\")"
+        }
+      ],
+      "id": "Ay5h8Upn",
+      "createdAt": 1667850235165,
+      "updatedAt": 1668233311158
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E",
+        "dcA1rIW6"
+      ],
+      "description": "Code for styling plots in RStudio.",
+      "name": "style",
+      "content": [
+        {
+          "label": "tittle/subtitle and axis names",
+          "language": "r",
+          "value": "# add tittle/subtitle and axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")"
+        },
+        {
+          "label": "axis limits",
+          "language": "r",
+          "value": "# axis limits\nylim(ymin, yend) \nxlim(xmin, xend)"
+        },
+        {
+          "label": "annotate",
+          "language": "r",
+          "value": "# create a circle\nannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n    \n# add text to circle\nannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, label = \"Lorem Ipsum\")"
+        }
+      ],
+      "id": "uCRZc6OI",
+      "createdAt": 1667883669622,
+      "updatedAt": 1668233911751
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "ZuysXm8A",
+        "IyXoXMjs"
+      ],
+      "description": "Library to convert HTML Tables to Excel file.",
+      "name": "html2excel",
+      "content": [
+        {
+          "label": "commands",
+          "language": "markdown",
+          "value": "# install\npip install html2excel\n\n# code\npython3 -m html2excel input_file output_file"
+        },
+        {
+          "label": "as package",
+          "language": "markdown",
+          "value": "# using as package\nfrom html2excel import ExcelParser\n\ninput_file = '/tmp/text_file.html'\noutput_file = '/tmp/converted_file.xlsx'\n\nparser = ExcelParser(input_file)\nparser.to_excel(output_file)"
+        },
+        {
+          "label": "example",
+          "language": "markdown",
+          "value": "# example\npython3 -m html2excel \"/Users/jtorrensh/Desktop/wget2003/1-01.html\" \"/Users/jtorrensh/Desktop/wget2003/output/1-01.csv\""
+        }
+      ],
+      "id": "3UXcG9fP",
+      "createdAt": 1668023286844,
+      "updatedAt": 1668233802084
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "ZuysXm8A",
+        "IyXoXMjs"
+      ],
+      "description": "A command line spreadsheet format converter.",
+      "name": "ssconvert",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "# install\nbrew install gnumeric\n\n# convert all files from xlsx to csv\nssconvert *.xlsx *.csv\n\n# concatenate all csv files and name the new file all.csv\ncat *.csv >> all.csv\n\n# list the file all.csv\nls all.csv\n\n# other info\nhttps://linux.die.net/man/1/ssconvert"
+        }
+      ],
+      "id": "1KtvDkec",
+      "createdAt": 1668139525990,
+      "updatedAt": 1668233532715
     }
   ],
   "tags": [
@@ -77,16 +226,34 @@
       "updatedAt": 1667787604172
     },
     {
-      "name": "wget",
-      "id": "qTFPD5R4",
-      "createdAt": 1667787609196,
-      "updatedAt": 1667787609196
+      "name": "R",
+      "id": "Z7C4DS8E",
+      "createdAt": 1667794793146,
+      "updatedAt": 1667794793146
     },
     {
-      "name": "terminal",
-      "id": "1dqvUQaB",
-      "createdAt": 1667787611504,
-      "updatedAt": 1667787611504
+      "name": "RStudio",
+      "id": "OJvlNdx5",
+      "createdAt": 1667794838275,
+      "updatedAt": 1667794838275
+    },
+    {
+      "name": "commands",
+      "id": "ZuysXm8A",
+      "createdAt": 1667826598871,
+      "updatedAt": 1667826598871
+    },
+    {
+      "name": "plot-gallery",
+      "id": "dcA1rIW6",
+      "createdAt": 1667852299286,
+      "updatedAt": 1667852299286
+    },
+    {
+      "name": "git & github",
+      "id": "CAuKhm2A",
+      "createdAt": 1668233892571,
+      "updatedAt": 1668233892571
     }
   ]
 }
