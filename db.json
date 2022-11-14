@@ -208,14 +208,19 @@
       "name": "ssconvert",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "commands",
           "language": "markdown",
           "value": "# install\nbrew install gnumeric\n\n# convert all files from xlsx to csv\nssconvert *.xlsx *.csv\n\n# concatenate all csv files and name the new file all.csv\ncat *.csv >> all.csv\n\n# list the file all.csv\nls all.csv\n\n# other info\nhttps://linux.die.net/man/1/ssconvert"
+        },
+        {
+          "label": "example",
+          "language": "plain_text",
+          "value": "# convert all file from xlsx to csv\nssconvert 1-01.xlsx 1-01.csv"
         }
       ],
       "id": "1KtvDkec",
       "createdAt": 1668139525990,
-      "updatedAt": 1668233532715
+      "updatedAt": 1668286704183
     }
   ],
   "tags": [
