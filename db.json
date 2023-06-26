@@ -59,32 +59,27 @@
         "Z7C4DS8E"
       ],
       "description": "Code for loading packages and importing primary data/source into Rstudio.",
-      "name": "load packages",
+      "name": "packages & data",
       "content": [
         {
-          "label": "install.packages()",
+          "label": "load packages",
           "language": "r",
-          "value": "#-----\n\n## last-update: \n### José Ángel Torrens Hernández\n\n#------\n# install packages\ninstall.packages(\"colortools\")\ninstall.packages(\"corrplot\")\ninstall.packages(\"corrr\")\ninstall.packages(\"data.table\")\ninstall.packages(\"dplyr\")\ninstall.packages(\"fmsb\")\ninstall.packages(\"ggplot2\")\ninstall.packages(\"ggpubr\")\ninstall.packages(\"ggradar\")\ninstall.packages(\"ggrepel\")\ninstall.packages(\"hrbrthemes\")\ninstall.packages(\"janitor\")\ninstall.packages(\"mxmaps\")\ninstall.packages(\"palmerpenguins\")\ninstall.packages(\"RColorBrewer\")\ninstall.packages(\"readxl\")\ninstall.packages(\"scales\")\ninstall.packages(\"stargazer\")\ninstall.packages(\"stringr\")\ninstall.packages(\"unikn\")\ninstall.packages(\"viridis\")"
+          "value": "# load packages\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# load packages\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)"
         },
         {
-          "label": "library()",
+          "label": "import data",
           "language": "r",
-          "value": "# library\nlibrary(colortools)\nlibrary(corrplot)\nlibrary(corrr)\nlibrary(data.table)\nlibrary(dplyr)\nlibrary(fmsb)\nlibrary(ggplot2)\nlibrary(ggpubr)\nlibrary(ggradar)\nlibrary(ggrepel)\nlibrary(hrbrthemes)\nlibrary(janitor)\nlibrary(mxmaps)\nlibrary(palmerpenguins)\nlibrary(RColorBrewer)\nlibrary(readxl)\nlibrary(scales)\nlibrary(stargazer)\nlibrary(stringr)\nlibrary(unikn)\nlibrary(viridis)"
+          "value": "# import data\ndata.name <-  read.csv(\"path/to/file.csv\")\n\n# import data as date\ndata <- read.csv((\"path/to/file.csv\") ,\n                stringsAsFactors = FALSE)\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)"
         },
         {
-          "label": "data",
+          "label": "import source",
           "language": "r",
-          "value": "# import data\ndata.name <-  read.csv(\"path/to/file\") \n\nsource(\"path/to/theme.R\")\n\n#------"
-        },
-        {
-          "label": "data as date",
-          "language": "r",
-          "value": "# import data\ndata <- read.csv((\"path/to/file\") ,\n                stringsAsFactors=FALSE)\ndata$date <- as.Date(data$date, format = \"%d/%m/%y\")\n\nsource(\"path/to/theme.R\")\n\n#------"
+          "value": "source(\"path/to/theme.R\")"
         }
       ],
       "id": "trWQpM5O",
       "createdAt": 1667794687865,
-      "updatedAt": 1668233653493
+      "updatedAt": 1687555070257
     },
     {
       "isDeleted": false,
@@ -100,12 +95,12 @@
         {
           "label": "Fragment 1",
           "language": "markdown",
-          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n  % ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# Undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# Discards all history and changes back to the specified commit\ngit reset --hard [commit]\n\n# forzar un push (cuando se borra un commit local)\n## Revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force"
+          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n% ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# Undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# Discards all history and changes back to the specified commit\ngit reset --hard [commit]\n\n# forzar un push (cuando se borra un commit local)\n## Revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force\n\n# remove a file, (rm data.tmp)\nrm [file]\t\n\n# remove with confirmation\nrm -i [file]\n\n# lets you open up the directory in finder\nopen.\n\n# allows you to view the registration details of a given domain, such as the name, address, and phone number of the registrant (whois google.com)\nwhois \n\n# prompts your Mac to speak out loud in its native voice whatever you\nwrite after the say prompt (say Hello My Name is Alf)\nsay\n\n# clean terminal\ncommand+K"
         }
       ],
       "id": "rd2lTa0N",
       "createdAt": 1667826253726,
-      "updatedAt": 1668233892595
+      "updatedAt": 1687551963277
     },
     {
       "isDeleted": false,
@@ -116,7 +111,7 @@
         "Z7C4DS8E"
       ],
       "description": "The unikn package provides useful color functions — by defining dedicated colors and color palettes, and commands for finding, changing, viewing, and using them — and styled text elements (e.g., for marking, underlining, or plotting colored titles) in R.",
-      "name": "colors-palette",
+      "name": "colors palette",
       "content": [
         {
           "label": "code",
@@ -131,7 +126,7 @@
       ],
       "id": "Ay5h8Upn",
       "createdAt": 1667850235165,
-      "updatedAt": 1668233311158
+      "updatedAt": 1687552146895
     },
     {
       "isDeleted": false,
@@ -139,31 +134,35 @@
       "folderId": "DQZWqrP5",
       "tagsIds": [
         "OJvlNdx5",
-        "Z7C4DS8E",
-        "dcA1rIW6"
+        "Z7C4DS8E"
       ],
       "description": "Code for styling plots in RStudio.",
       "name": "style",
       "content": [
         {
-          "label": "tittle/subtitle and axis names",
+          "label": "tittle/subtitle & axis names",
           "language": "r",
-          "value": "# add tittle/subtitle and axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")"
+          "value": "# add tittle/subtitle & axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n     caption = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")\n\n# add tittle/subtitle & axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n\t\t caption = \"Lorem Ipsum\",\n     x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\",\n     fill = \"Lorem Ipsum\")"
         },
         {
           "label": "axis limits",
           "language": "r",
-          "value": "# axis limits\nylim(ymin, yend) \nxlim(xmin, xend)"
+          "value": "# axis limits\nylim(ymin, yend) \nxlim(xmin, xend)\n\n# axis scale dates\nscale_x_date(date_breaks = \"1 week\", date_labels = \"%d/%m\")\n\n# axis limits continuous\nscale_y_continuous(limits=c(0,0), breaks=0:0)\nscale_y_continuous(breaks = seq(0, 0, by = 0))"
         },
         {
-          "label": "annotate",
+          "label": "theme",
           "language": "r",
-          "value": "# create a circle\nannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n    \n# add text to circle\nannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, label = \"Lorem Ipsum\")"
+          "value": " tema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
+        },
+        {
+          "label": "theme.grid",
+          "language": "r",
+          "value": "tema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
         }
       ],
       "id": "uCRZc6OI",
       "createdAt": 1667883669622,
-      "updatedAt": 1668233911751
+      "updatedAt": 1687552904407
     },
     {
       "isDeleted": false,
@@ -220,7 +219,110 @@
       ],
       "id": "1KtvDkec",
       "createdAt": 1668139525990,
-      "updatedAt": 1668286704183
+      "updatedAt": 1687551981964
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": "Plot gallery // https://r-graph-gallery.com",
+      "name": "plot gallery",
+      "content": [
+        {
+          "label": "geom_bar",
+          "language": "r",
+          "value": "df %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1)\n#   geom_bar(position = \"dodge\", stat = \"identity\", alpha = 1)\n\n# reorder bars\ndf %>% \n\tggplot(aes(x = reorder(axis_x, -axis_y) , y = axis_y, fill = col_name)) +\n\ndf %>% \n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy))) +\n\n#  scale_fill_manual(values = c(colors-palette))\n\n#  facet_wrap(~ col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n\n#  geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n#\t geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n#  geom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n#\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n# coord_flip()"
+        },
+        {
+          "label": "geom_line",
+          "language": "r",
+          "value": "dt %>%\n\tggplot( aes(axis_x, axis_y)) +\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n# create a circle -- date\nannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# add text to circle -- date\nannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, label = \"Lorem Ipsum\")\n\n# coord_flip()"
+        }
+      ],
+      "id": "XhBOzAag",
+      "createdAt": 1686102344686,
+      "updatedAt": 1687552846128
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": "Useful functions when working with data",
+      "name": "data cleaning",
+      "content": [
+        {
+          "label": "functions",
+          "language": "r",
+          "value": "# functions\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}"
+        },
+        {
+          "label": "relocate",
+          "language": "r",
+          "value": "# reorder columns\nrelocate(col_name, .before = col_name)    \nrelocate(col_name, .after = col_name)"
+        },
+        {
+          "label": "select",
+          "language": "r",
+          "value": "# select\nselect(-c(col_name))\nselect(c(col_name))\nselect(., (3:10), (26:41), 43) # select by position"
+        },
+        {
+          "label": "mutate",
+          "language": "r",
+          "value": "# creates a column -- examples\nmutate(new_col = \"Lorem Ipsum\")\nmutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \nmutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\nmutate(new_col = (col_name + col_name))\nmutate(col_name = excel_ numeric to date(col_name)) # janitor\nmutate_if(is.numeric, ~replace(., is.na(.), 0)) # replace NA values\nmutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")"
+        },
+        {
+          "label": "filter",
+          "language": "r",
+          "value": "# filter -- examples\nfilter(!is.na(col_name)) \nfilter(!row_number() %in% c(1))\nfilter(col_name != \"Lorem Ipsum\")"
+        },
+        {
+          "label": "rows & columns",
+          "language": "r",
+          "value": "# rename colums\nrename(new_name = old_name)\n\n# operations with columns\ndf %>% \n  select(c(col_name1, col_name2)) %>%\n  group_by(pcol_name1aís) %>% \n  count(col_name2)\n  \n# remove rows (176 = row number)\ndf <-  df[-c(176, 177), ]\n\n# slice head\nslice_head(n = 0)\n\n# transpose\ndf <- as.data.frame(t(df))\n\n# bind rows\ndata <-  bind_rows(df1, df1)"
+        },
+        {
+          "label": "others",
+          "language": "r",
+          "value": "# change value to NA\ndf[df == \"Lorem Ipsum\"] <- NA\n\n# clean environment\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n# janitor\nclean_names()\nremove_empty()\nremove constant()\nget_dupes(x1, x2, x3, x4)"
+        },
+        {
+          "label": "electoral analysis",
+          "language": "r",
+          "value": "# pmap(), que se utiliza para aplicar una función a múltiples argumentos de una manera paralela. En este caso, se está aplicando la función across() a una lista de nombres de variables: \"pan\", \"pri\", \"prd\", etc. La función across() se utiliza para aplicar una operación a múltiples columnas seleccionadas por su nombre. Dentro de across(), se utiliza una expresión lambda (~) junto con la función names() y which.max() para obtener el nombre de la columna con el valor máximo en cada fila. La función c(...) se utiliza para referirse a los argumentos que se pasan a través de pmap().\n# La segunda línea de código utiliza la función ifelse() para verificar si el valor de \"primera_fuerza\" es igual a \"character(0)\". Si es así, se asigna el valor NA (ausencia de valor). Esto se hace para manejar el caso en el que no haya ningún valor máximo encontrado en las columnas especificadas.\n# La tercera línea de código utiliza la función unlist() para convertir el objeto \"primera_fuerza\" en una lista unidimensional. Esto se hace para asegurarse de que \"primera_fuerza\" sea un vector de valores individuales en lugar de una lista.\n\nmutate(primera_fuerza = pmap(across(c(\"pan\", \"pri\", \"prd\",\"pvem\", #  variable primera fuerza\n                                        \"pt\", \"panal\", \"morena\",\"pri_pvem_panal\",\n                                        \"pri_pvem\", \"pri_panal\",\"pvem_panal\")), ~ names(c(...)[which.max(c(...))]))          \n       primera_fuerza = ifelse(primera_fuerza ==\"character(0)\", NA, primera_fuerza),\n       primera_fuerza = unlist(primera_fuerza))\n\nmutate_all(~ifelse(is.nan(.), 0, .)) # reemplazer NaN por 0's\nmutate(total_votos_p = rowSums(select(., (28:40)))) # crear total de votos por partido sumando de la columa 28:40"
+        }
+      ],
+      "id": "kaGVK7Ys",
+      "createdAt": 1686104485747,
+      "updatedAt": 1687554244674
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": "Code for exporting files",
+      "name": "export",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "# explort csv\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE)\n\n# export ggplot\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600)"
+        }
+      ],
+      "id": "EYUig660",
+      "createdAt": 1687551078599,
+      "updatedAt": 1687551911864
     }
   ],
   "tags": [
@@ -247,12 +349,6 @@
       "id": "ZuysXm8A",
       "createdAt": 1667826598871,
       "updatedAt": 1667826598871
-    },
-    {
-      "name": "plot-gallery",
-      "id": "dcA1rIW6",
-      "createdAt": 1667852299286,
-      "updatedAt": 1667852299286
     },
     {
       "name": "git & github",
