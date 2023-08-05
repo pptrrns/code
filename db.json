@@ -162,7 +162,7 @@
       ],
       "id": "uCRZc6OI",
       "createdAt": 1667883669622,
-      "updatedAt": 1687552904407
+      "updatedAt": 1691078088353
     },
     {
       "isDeleted": false,
@@ -235,7 +235,7 @@
         {
           "label": "geom_bar",
           "language": "r",
-          "value": "df %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1)\n#   geom_bar(position = \"dodge\", stat = \"identity\", alpha = 1)\n\n# reorder bars\ndf %>% \n\tggplot(aes(x = reorder(axis_x, -axis_y) , y = axis_y, fill = col_name)) +\n\ndf %>% \n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy))) +\n\n#  scale_fill_manual(values = c(colors-palette))\n\n#  facet_wrap(~ col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n\n#  geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n#\t geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n#  geom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n#\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n# coord_flip()"
+          "value": "df %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1)\n#   geom_bar(position = \"dodge\", stat = \"identity\", alpha = 1)\n\n# reorder bars\ndf %>% \n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name)) +\n\ndf %>% \n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy))) +\n\n#  scale_fill_manual(values = c(colors-palette))\n\n#  facet_wrap(~ col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n\n#  geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n#\t geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n#  geom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n#\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n# coord_flip()"
         },
         {
           "label": "geom_line",
@@ -245,7 +245,7 @@
       ],
       "id": "XhBOzAag",
       "createdAt": 1686102344686,
-      "updatedAt": 1687552846128
+      "updatedAt": 1691071660789
     },
     {
       "isDeleted": false,
@@ -264,24 +264,9 @@
           "value": "# functions\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}"
         },
         {
-          "label": "relocate",
+          "label": "dplyr",
           "language": "r",
-          "value": "# reorder columns\nrelocate(col_name, .before = col_name)    \nrelocate(col_name, .after = col_name)"
-        },
-        {
-          "label": "select",
-          "language": "r",
-          "value": "# select\nselect(-c(col_name))\nselect(c(col_name))\nselect(., (3:10), (26:41), 43) # select by position"
-        },
-        {
-          "label": "mutate",
-          "language": "r",
-          "value": "# creates a column -- examples\nmutate(new_col = \"Lorem Ipsum\")\nmutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \nmutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\nmutate(new_col = (col_name + col_name))\nmutate(col_name = excel_ numeric to date(col_name)) # janitor\nmutate_if(is.numeric, ~replace(., is.na(.), 0)) # replace NA values\nmutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")"
-        },
-        {
-          "label": "filter",
-          "language": "r",
-          "value": "# filter -- examples\nfilter(!is.na(col_name)) \nfilter(!row_number() %in% c(1))\nfilter(col_name != \"Lorem Ipsum\")"
+          "value": "# select\nselect(-c(col_name))\nselect(c(col_name))\nselect(., (3:10), (26:41), 43) # select by position\n\n# reorder columns\nrelocate(col_name, .before = col_name)    \nrelocate(col_name, .after = col_name)\n\n# creates a column -- examples\nmutate(new_col = \"Lorem Ipsum\")\nmutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \nmutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\nmutate(new_col = (col_name + col_name))\nmutate(col_name = excel_ numeric to date(col_name)) # janitor\nmutate_if(is.numeric, ~replace(., is.na(.), 0)) # replace NA values\nmutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")\n\n# filter -- examples\nfilter(!is.na(col_name)) \nfilter(!row_number() %in% c(1))\nfilter(col_name != \"Lorem Ipsum\")"
         },
         {
           "label": "rows & columns",
@@ -301,7 +286,7 @@
       ],
       "id": "kaGVK7Ys",
       "createdAt": 1686104485747,
-      "updatedAt": 1687554244674
+      "updatedAt": 1691268540962
     },
     {
       "isDeleted": false,
