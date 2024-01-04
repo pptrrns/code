@@ -21,6 +21,16 @@
       "createdAt": 1667787411771,
       "updatedAt": 1668023356756,
       "index": 1
+    },
+    {
+      "name": "LaTex",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "KPnlb64o",
+      "createdAt": 1703835264009,
+      "updatedAt": 1703835272800
     }
   ],
   "snippets": [
@@ -328,6 +338,24 @@
       "id": "tg8QVkoq",
       "createdAt": 1703197037423,
       "updatedAt": 1703197055936
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "KPnlb64o",
+      "tagsIds": [],
+      "description": null,
+      "name": "thesis commands",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "latex",
+          "value": "% Section formatting\n\n\\part{Your Part Title}\n\\chapter{Your Chapter Title}\n\\section{Your Section Title}\n\\subsection{Your Subsection Title}\n\\subsubsection{Your Subsubsection Title}\n\\paragraph{Your Paragraph Title}\n\\subparagraph{Your Subparagraph Title}\n\n% Text size\n\n\\Huge\n\\huge\n\\LARGE\n\\Large\n\\large\n\\normalsize\n\\small\n\\footnotesize\n\\scriptsize\n\\tiny\n\n% Font shapes\n\n\\emph{} % This is Italic Shape\n\\scshape{} % This is Small Caps Shape\n\n% New thought block\n\n\\newthought{Your new thought here} \n\n% Analytical Index entries\n\n\\analyticentry{Your Index Term 1}\n\\analytics{Your Index Term 1}\n\n% Label and References\n\n\\hyperref[tab:figura1]{Figura \\ref{fig:figura1}}\n\n\\label{tab:tabla1} % Table reference\n\\label{apendiceA} % Appendices references\n\\label{introduction} % Chapter reference\n\n% Center environment\n\n\\begin{center}\n  Your centered content goes here\n\\end{center}\n\n% Itemize and enumerate environments\n\n\\begin{itemize}\n  \\item Your item 1\n  \\item Your item 2\n\\end{itemize}\n\n\\begin{enumerate}\n  \\item Your item 1\n  \\item Your item 2\n\\end{enumerate}\n\n% Quote Environment\n\n\\begin{quote}\n  \\lipsum[2]\n\\end{quote}\n\n% Savequote environment\n\n\\begin{savequote}[85mm]\n  \\small{Your quote here.}\n  \\qauthor{Your Author}\n\\end{savequote}\n\n% Equation Environment\n\n\\begin{equation}\nx = 1\n\\end{equation}\n\n% Figure Environment\n\n\\begin{figure}[H]\n    \\centering \n        \\includegraphics[width = \\textwidth]{figures/fig#}\n        \\caption[Lorem Ipsum]{Proin at eros...\n    \\label{fig:figura#}}\n\\end{figure}\n\n% Full page figure Environment\n\n\\newpage\n\\thispagestyle{empty}\n\\begin{landscape}\n\\thispagestyle{empty}\n  \\begin{figure}[p]\n    \\centering\n    \\includegraphics[width = \\linewidth, keepaspectratio]{figures/fig#.png}\n    \\caption[Lorem Ipsum]{Proin at eros...}\n    \\label{fig:figura#}\n  \\end{figure}\n\\end{landscape}\n\n% Code Listing Environment\n\n\\begin{lstlisting}[language = R, caption = Lorem Ipsum]\n\tLorem Ipsum\n\\end{lstlisting}\n\n% Footnotes\n\n\\footnote{Lorem ipsum.}\\textsuperscript{,}\\footnote{Lorem ipsum.}\n\n\\footnote{\\lipsum[8]}\n\n% References\n\n% The references.bib file contains the references. By default, the references are cited in the APSA style. \n% Use the command \\citep{} to manage the references.\n\n\\citep{BibTeX key, BibTeX key}\n\n\\citep[pg.~32]{BibTeX key}\n\n\\citep{BibTeX key}\n\n\\citep[\\emph{véase}][pg.~5]{BibTeX key}\n\n\\citep[Chap.~5]{BibTeX key}\n\n% Page settings\n\n\\blankpage % Add a blank page\n\\newpage % Add a new page"
+        }
+      ],
+      "id": "ppG31YcS",
+      "createdAt": 1703835274418,
+      "updatedAt": 1704166923704
     }
   ],
   "tags": [
