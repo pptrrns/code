@@ -68,28 +68,23 @@
         "OJvlNdx5",
         "Z7C4DS8E"
       ],
-      "description": "Code for loading packages and importing primary data/source into Rstudio.",
-      "name": "packages & data",
+      "description": "A list of useful commands",
+      "name": "useful commands",
       "content": [
         {
-          "label": "load packages",
+          "label": "workflow",
           "language": "r",
-          "value": "# load packages\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# load packages\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)"
+          "value": "#--------------- Load packages\n\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# or\n\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)\n\n#--------------- Directory\n\nsetwd(\"/path/to/your/directory\")\n\ngetwd()\n\ndir() # or\ndir(\"/path/to/directory\")\n\nlist.files() #  Lists files in a directory\nlist.dirs()  # Lists subdirectories within a directory\nls() # Lists objects in the current workspace\n\n#--------------- Import data\n\n# Import csv file\ndata.name <-  read.csv(\"path/to/file.csv\")\n\n# Import data as date\ndata <- read.csv((\"path/to/file.csv\"), stringsAsFactors = FALSE)\n\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# Import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# Unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)\n\n#--------------- Import source\n\nsource(\"path/to/theme.R\")\nsource(\"path/to/functions.R\")\n\n#--------------- Export\n\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE) # Export csv\n\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600) # Export ggplot\n\n#--------------- Clean environment\n\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n#--------------- Help\n\nhelp(\"mean\") # Accesses help documentation for a function (e.g., \"mean\").\n\nhelp(package = \"stats\") # Accesses help documentation for a package (e.g., \"stats\")."
         },
         {
-          "label": "import data",
+          "label": "operators / usuful commands",
           "language": "r",
-          "value": "# import data\ndata.name <-  read.csv(\"path/to/file.csv\")\n\n# import data as date\ndata <- read.csv((\"path/to/file.csv\") ,\n                stringsAsFactors = FALSE)\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)"
-        },
-        {
-          "label": "import source",
-          "language": "r",
-          "value": "source(\"path/to/theme.R\")"
+          "value": "# Operators are used to perform various operations on variables and data. \n\n# Here is a detailed list of some logical, arithmetic, and boolean operators in R:\n\n #--------------- Arithmetic\n \n# Addition (+)\n# Subtraction (-)\n# Multiplication (*)\n# Division (/)\n# Exponentiation (**) or (^)\n# Modulus (remainder) (%%)\n# Integer division (%/%)\n\n#--------------- Boolean\n\n# Equal to (==)\n# Not equal to (!=)\n# Less than (<)\n# Greater than (<)\n# Less than or equal to (<=)\n# Greater than or equal to (>=)\n\n#--------------- Logical\n\n# Logical AND (&)\n# Logical OR (|)\n# Logical NOT / negation (!)\n# Membership operator (checks if an element is in a set) (%in%)\n\n#--------------- Assignment\n\n# Left assignment (<-) or (=)\n# Right assignment (->)\n\n#--------------- Concatenation\n\n# Vector concatenation c()\n# Sequence (:)\n\nna.rm = TRUE # Remove NA values. When set to TRUE, it instructs the function to exclude missing values (represented as NA) from its calculations.\n\n#--------------- Statistics\n\nmean(x)  # Mean\nsummary(df) # Provides a summary of various statistics for a dataset\ndensity(rnorm(100))) # Estimates and plots the density of a numerical vector\ncumsum() # Calculates cumulative sums\ncummean() # Calculates cumulative means\n\n#--------------- Data Checking Functions\n\n# Checks if values are ––––––\nis.integer() \nis.numeric()\nis.character()\nis.factor()\nis.logical()\n\n# Checks for missing (NA) values\nis.na() # Returns a logical vector indicating missing values.\n\n# Checks for NULL values\nis.null()\n\n#--------------- Data Conversion Functions\n\n# Converts values to ––––––\nas.integer(3.14) # Converts 3.14 to the integer 3\nas.numeric(\"5\") # Converts the string \"5\" to the number 5\nas.character(TRUE) # Converts TRUE to the string \"TRUE\"\nas.factor(c(\"x1\", \"x2\", \"x3\"))\n\n#  Converts values to logical (TRUE/FALSE)\nas.logical()\nas.logical(0) # Converts 0 to FALSE\n\n# Converts values to NULL\nas.null()\nas.null(x) # Sets the value of x to NULL"
         }
       ],
       "id": "trWQpM5O",
       "createdAt": 1667794687865,
-      "updatedAt": 1687555070257
+      "updatedAt": 1705771746883
     },
     {
       "isDeleted": false,
@@ -100,7 +95,7 @@
         "CAuKhm2A"
       ],
       "description": "Let’s Git Started -- Beginner’s Guide to Git & Github",
-      "name": "git",
+      "name": "git started",
       "content": [
         {
           "label": "Fragment 1",
@@ -110,7 +105,7 @@
       ],
       "id": "rd2lTa0N",
       "createdAt": 1667826253726,
-      "updatedAt": 1687551963277
+      "updatedAt": 1705715358497
     },
     {
       "isDeleted": false,
@@ -126,17 +121,17 @@
         {
           "label": "code",
           "language": "r",
-          "value": "#-----\nlibrary(unikn)\n\n# define colors and color names -- as vectors\npaleta.colores <- c(\"#000000\", # color 1\n\t\t\t\t\t\t\t\t\t\t\"#000000\", # color 2\n                    \"#000000\") # coolor 3\n\npaleta.degradado <- usecol(c(\"#000000\", \"#000000\", \"#000000\"), n = 4)\n\n# see color palettes\nseecol(paleta.colores, \t\t\t# a color palette\n\t\t\t col_brd = \"white\", \t# color and width of borders\n       lwd_brd = 5, \t\t\t\t\n       title = \"\") \t\t\t\t\t# plot title"
+          "value": "#--------------- Library\n\nlibrary(unikn)\n\n#--------------- Define colors and color names -- as vectors\n\npaleta.colores <- c(\"#000000\", # Color 1\n\t\t\t\t\t\t\t\t\t\t\"#000000\", # Color 2\n                    \"#000000\") # Color 3\n\npaleta.degradado <- usecol(c(\"#000000\", \"#000000\", \"#000000\"), n = 4)\n\n#--------------- See color palettes\n\nseecol(paleta.colores, \t\t\t# A color palette\n\t\t\t col_brd = \"white\", \t# Color and width of borders\n       lwd_brd = 5, \t\t\t\t\n       title = \"\") \t\t\t\t\t# Plot title"
         },
         {
           "label": "example code",
           "language": "r",
-          "value": "# example code\ncolor_google <- c(\"#4285f4\", \"#34a853\", \"#fbbc05\", \"#ea4335\")\nnames_google <- c(\"blueberry\", \"sea green\", \"selective yellow\", \"cinnabar\")\n\npal_google <- newpal(color_google, names_google)\n\n# inspect color palette\nseecol(pal_google, \n       col_brd = \"white\", lwd_brd = 8,\n       main = \"Colors of the Google logo\")\n       \nolives  <- grepal(\"olive\", plot = FALSE)\noranges <- grepal(\"orange\", plot = FALSE)\n\n# see color palettes -- more than 1 palette\nseecol(pal = list(olives, oranges), \n       pal_names = c(\"olives\", \"oranges\"), \n       main = \"Comparing olives with oranges\")"
+          "value": "#--------------- Example code\n\ncolor_google <- c(\"#4285f4\", \"#34a853\", \"#fbbc05\", \"#ea4335\")\nnames_google <- c(\"blueberry\", \"sea green\", \"selective yellow\", \"cinnabar\")\n\npal_google <- newpal(color_google, names_google)\n\n#--------------- Inspect color palette\n\nseecol(pal_google, \n       col_brd = \"white\", lwd_brd = 8,\n       main = \"Colors of the Google logo\")\n       \nolives  <- grepal(\"olive\", plot = FALSE)\noranges <- grepal(\"orange\", plot = FALSE)\n\n#--------------- See color palettes -- more than 1 palette\n\nseecol(pal = list(olives, oranges), \n       pal_names = c(\"olives\", \"oranges\"), \n       main = \"Comparing olives with oranges\")"
         }
       ],
       "id": "Ay5h8Upn",
       "createdAt": 1667850235165,
-      "updatedAt": 1687552146895
+      "updatedAt": 1705715201829
     },
     {
       "isDeleted": false,
@@ -150,29 +145,19 @@
       "name": "style",
       "content": [
         {
-          "label": "tittle/subtitle & axis names",
+          "label": "axis",
           "language": "r",
-          "value": "# add tittle/subtitle & axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n     caption = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")\n\n# add tittle/subtitle & axis names\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n\t\t caption = \"Lorem Ipsum\",\n     x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\",\n     fill = \"Lorem Ipsum\")"
-        },
-        {
-          "label": "axis limits",
-          "language": "r",
-          "value": "# axis limits\nylim(ymin, yend) \nxlim(xmin, xend)\n\n# axis scale dates\nscale_x_date(date_breaks = \"1 week\", date_labels = \"%d/%m\")\n\n# axis limits continuous\nscale_y_continuous(limits=c(0,0), breaks=0:0)\nscale_y_continuous(breaks = seq(0, 0, by = 0))"
+          "value": "#--------------- Axis limits\n\nylim(ymin, yend) \nxlim(xmin, xend)\n\n# Axis scale dates\nscale_x_date(date_breaks = \"1 week\", date_labels = \"%d/%m\")\n\n# Axis limits continuous\nscale_y_continuous(limits=c(0,0), breaks=0:0)\nscale_y_continuous(breaks = seq(0, 0, by = 0))\n\n#--------------- Title, subtitle & axis names\n\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n     caption = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")"
         },
         {
           "label": "theme",
           "language": "r",
-          "value": " tema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
-        },
-        {
-          "label": "theme.grid",
-          "language": "r",
-          "value": "tema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
+          "value": "#--------------- Theme\n\n tema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)\n\n#--------------- Theme grid\n\ntema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
         }
       ],
       "id": "uCRZc6OI",
       "createdAt": 1667883669622,
-      "updatedAt": 1691078088353
+      "updatedAt": 1705769328113
     },
     {
       "isDeleted": false,
@@ -239,23 +224,23 @@
         "OJvlNdx5",
         "Z7C4DS8E"
       ],
-      "description": "Plot gallery // https://r-graph-gallery.com",
-      "name": "plot gallery",
+      "description": "Plot gallery",
+      "name": "ggplot",
       "content": [
         {
           "label": "geom_bar",
           "language": "r",
-          "value": "df %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1)\n#   geom_bar(position = \"dodge\", stat = \"identity\", alpha = 1)\n\n# reorder bars\ndf %>% \n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name)) +\n\ndf %>% \n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy))) +\n\n#  scale_fill_manual(values = c(colors-palette))\n\n#  facet_wrap(~ col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n\n#  geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n#\t geom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n#  geom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n#\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n# coord_flip()"
+          "value": "#--------------- Bar plot\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1) # position stack / dodge\n\n#--------------- Reorder bars\ndf %>% \n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name))\n\ndf %>% \n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy)))\n\n#--------------- Color\n\nscale_fill_manual(values = c(colors-palette))\n\n#--------------- Facet wrap\n\nfacet_wrap(~ col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n\n#--------------- Text\n\ngeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\ngeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\ngeom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n\t\t\t\t\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n#--------------- Axis\n\ncoord_flip()"
         },
         {
           "label": "geom_line",
           "language": "r",
-          "value": "dt %>%\n\tggplot( aes(axis_x, axis_y)) +\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n# create a circle -- date\nannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# add text to circle -- date\nannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, label = \"Lorem Ipsum\")\n\n# coord_flip()"
+          "value": "#--------------- Line plot\n\ndt %>%\n\tggplot( aes(axis_x, axis_y)) +\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n#--------------- Create a circle -- date\n\nannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# Add text to circle -- date\nannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\ty = y, label = \"Lorem Ipsum\")\n\n#--------------- Axis\n\ncoord_flip()"
         }
       ],
       "id": "XhBOzAag",
       "createdAt": 1686102344686,
-      "updatedAt": 1691071660789
+      "updatedAt": 1705769396781
     },
     {
       "isDeleted": false,
@@ -266,58 +251,22 @@
         "Z7C4DS8E"
       ],
       "description": "Useful functions when working with data",
-      "name": "data cleaning",
+      "name": "dplyr",
       "content": [
         {
-          "label": "functions",
+          "label": "columns",
           "language": "r",
-          "value": "# functions\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}"
+          "value": "#--------------- Select\n\ndf %>% select(-c(col_name))\ndf %>% select(c(col_name))\ndf %>% select((3:10), (26:41), 43) # Select by position\ndf %>% select((col_name1:col_name10)) # Select by name / position\ndf %>% select(-(col_name1:col_name10)) # Selects columns except those from year to day.\ndf %>% select(contains(\"Lorem Ipsum\")) # Selects columns containing \"Lorem Ipsum\"\ndf %>% select(ends_with(\"_lipsum\")) # Selects columns ending with a certain pattern\ndf %>% select(starts_with(\"lipsum_\")) # Selects columns starting with a certain pattern\n\n#--------------- Relocate\n\ndf %>% relocate(col_name, .before = col_name)    \ndf %>% relocate(col_name, .after = col_name)\n\n#--------------- Mutate\n\ndf %>% mutate(new_col = \"Lorem Ipsum\")\ndf %>% mutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \ndf %>% mutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\ndf %>% mutate(new_col = (col_name + col_name)) # Check operator in the useful commands sections\ndf %>% mutate(col_name = excel_numeric_to_date(col_name)) # janitor\ndf %>% mutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")\n\ndf %>% mutate_if(is.numeric, ~replace(., is.na(.), 0)) # Replace NA values\n\n#--------------- Rename colums\n\ndf %>% rename(new_name = old_name)\n\n#--------------- Operations\n\ndf %>% \n  group_by(col_name) %>% \n  count(col_name2)\n  \ndf %>% # Summarizes data by computing statistics for groups\n  group_by(col_name) %>% \n  summarise(n = sum(col_name))\n  \n#--------------- Data cleaning / Janitor\n\nclean_names(df) # Cleans column names by converting them to lowercase, removing spaces, and replacing special characters with underscores\nremove_empty(df) # Removes rows with all empty values\nget_dupes(my_data, \"name\", \"age\") # Identifies duplicate rows based on specified columns.\n\n#--------------- Create a function\n\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}\n\n#--------------- Transpose\n\ndf <- as.data.frame(t(df))"
         },
         {
-          "label": "dplyr",
+          "label": "rows",
           "language": "r",
-          "value": "# select\nselect(-c(col_name))\nselect(c(col_name))\nselect(., (3:10), (26:41), 43) # select by position\n\n# reorder columns\nrelocate(col_name, .before = col_name)    \nrelocate(col_name, .after = col_name)\n\n# creates a column -- examples\nmutate(new_col = \"Lorem Ipsum\")\nmutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \nmutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\nmutate(new_col = (col_name + col_name))\nmutate(col_name = excel_ numeric to date(col_name)) # janitor\nmutate_if(is.numeric, ~replace(., is.na(.), 0)) # replace NA values\nmutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")\n\n# filter -- examples\nfilter(!is.na(col_name)) \nfilter(!row_number() %in% c(1))\nfilter(col_name != \"Lorem Ipsum\")"
-        },
-        {
-          "label": "rows & columns",
-          "language": "r",
-          "value": "# rename colums\nrename(new_name = old_name)\n\n# operations with columns\ndf %>% \n  select(c(col_name1, col_name2)) %>%\n  group_by(pcol_name1aís) %>% \n  count(col_name2)\n  \n# remove rows (176 = row number)\ndf <-  df[-c(176, 177), ]\n\n# slice head\nslice_head(n = 0)\n\n# transpose\ndf <- as.data.frame(t(df))\n\n# bind rows\ndata <-  bind_rows(df1, df1)"
-        },
-        {
-          "label": "others",
-          "language": "r",
-          "value": "# change value to NA\ndf[df == \"Lorem Ipsum\"] <- NA\n\n# clean environment\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n# janitor\nclean_names()\nremove_empty()\nremove constant()\nget_dupes(x1, x2, x3, x4)"
-        },
-        {
-          "label": "electoral analysis",
-          "language": "r",
-          "value": "# pmap(), que se utiliza para aplicar una función a múltiples argumentos de una manera paralela. En este caso, se está aplicando la función across() a una lista de nombres de variables: \"pan\", \"pri\", \"prd\", etc. La función across() se utiliza para aplicar una operación a múltiples columnas seleccionadas por su nombre. Dentro de across(), se utiliza una expresión lambda (~) junto con la función names() y which.max() para obtener el nombre de la columna con el valor máximo en cada fila. La función c(...) se utiliza para referirse a los argumentos que se pasan a través de pmap().\n# La segunda línea de código utiliza la función ifelse() para verificar si el valor de \"primera_fuerza\" es igual a \"character(0)\". Si es así, se asigna el valor NA (ausencia de valor). Esto se hace para manejar el caso en el que no haya ningún valor máximo encontrado en las columnas especificadas.\n# La tercera línea de código utiliza la función unlist() para convertir el objeto \"primera_fuerza\" en una lista unidimensional. Esto se hace para asegurarse de que \"primera_fuerza\" sea un vector de valores individuales en lugar de una lista.\n\nmutate(primera_fuerza = pmap(across(c(\"pan\", \"pri\", \"prd\",\"pvem\", #  variable primera fuerza\n                                        \"pt\", \"panal\", \"morena\",\"pri_pvem_panal\",\n                                        \"pri_pvem\", \"pri_panal\",\"pvem_panal\")), ~ names(c(...)[which.max(c(...))]))          \n       primera_fuerza = ifelse(primera_fuerza ==\"character(0)\", NA, primera_fuerza),\n       primera_fuerza = unlist(primera_fuerza))\n\nmutate_all(~ifelse(is.nan(.), 0, .)) # reemplazer NaN por 0's\nmutate(total_votos_p = rowSums(select(., (28:40)))) # crear total de votos por partido sumando de la columa 28:40"
+          "value": "#--------------- Filter\n\ndf %>% filter(!is.na(col_name)) \ndf %>% filter(!row_number() %in% c(1))\ndf %>% filter(col_name != \"Lorem Ipsum\")\ndf %>% filter(col_name1 == 1, col_name2 == 1, col_name3 > 99) # Check operator in the useful commands sections\ndf %>% filter(col_name %in% c(1, 2))\n\n#--------------- Arrange\n\ndf %>% arrange(col_name) # Orders rows based on variables\ndf %>% arrange(desc(col_name))\n\n#--------------- Remove rows (176 = row number)\n\n# Remove rows (176 = row number)\ndf <-  df[-c(176, 177), ]\n\n# Slice head\nslice_head(n = 0)\n\n#--------------- Bind\n\ndata <-  bind_rows(df1, df1)\n\n#--------------- Row numbers\n\nrow_number() # Assigns unique row numbers\n\n#--------------- Change value \"Lorem Ipsum\" to NA\n\ndf[df == \"Lorem Ipsum\"] <- NA"
         }
       ],
       "id": "kaGVK7Ys",
       "createdAt": 1686104485747,
-      "updatedAt": 1703297284632
-    },
-    {
-      "isDeleted": false,
-      "isFavorites": false,
-      "folderId": "DQZWqrP5",
-      "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
-      ],
-      "description": "Code for exporting files",
-      "name": "export",
-      "content": [
-        {
-          "label": "Fragment 1",
-          "language": "r",
-          "value": "# explort csv\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE)\n\n# export ggplot\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600)"
-        }
-      ],
-      "id": "EYUig660",
-      "createdAt": 1687551078599,
-      "updatedAt": 1687551911864
+      "updatedAt": 1705771739708
     },
     {
       "isDeleted": false,
@@ -356,6 +305,27 @@
       "id": "ppG31YcS",
       "createdAt": 1703835274418,
       "updatedAt": 1704166923704
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "OJvlNdx5",
+        "Z7C4DS8E"
+      ],
+      "description": null,
+      "name": "electoral",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "# pmap(), que se utiliza para aplicar una función a múltiples argumentos de una manera paralela. En este caso, se está aplicando la función across() a una lista de nombres de variables: \"pan\", \"pri\", \"prd\", etc. La función across() se utiliza para aplicar una operación a múltiples columnas seleccionadas por su nombre. Dentro de across(), se utiliza una expresión lambda (~) junto con la función names() y which.max() para obtener el nombre de la columna con el valor máximo en cada fila. La función c(...) se utiliza para referirse a los argumentos que se pasan a través de pmap().\n# La segunda línea de código utiliza la función ifelse() para verificar si el valor de \"primera_fuerza\" es igual a \"character(0)\". Si es así, se asigna el valor NA (ausencia de valor). Esto se hace para manejar el caso en el que no haya ningún valor máximo encontrado en las columnas especificadas.\n# La tercera línea de código utiliza la función unlist() para convertir el objeto \"primera_fuerza\" en una lista unidimensional. Esto se hace para asegurarse de que \"primera_fuerza\" sea un vector de valores individuales en lugar de una lista.\n\nmutate(primera_fuerza = pmap(across(c(\"pan\", \"pri\", \"prd\",\"pvem\", #  variable primera fuerza\n                                        \"pt\", \"panal\", \"morena\",\"pri_pvem_panal\",\n                                        \"pri_pvem\", \"pri_panal\",\"pvem_panal\")), ~ names(c(...)[which.max(c(...))]))          \n       primera_fuerza = ifelse(primera_fuerza ==\"character(0)\", NA, primera_fuerza),\n       primera_fuerza = unlist(primera_fuerza))\n\nmutate_all(~ifelse(is.nan(.), 0, .)) # reemplazer NaN por 0's\nmutate(total_votos_p = rowSums(select(., (28:40)))) # crear total de votos por partido sumando de la columa 28:40"
+        }
+      ],
+      "id": "o9O0eu0j",
+      "createdAt": 1705714387242,
+      "updatedAt": 1705714411919
     }
   ],
   "tags": [
