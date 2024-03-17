@@ -31,6 +31,16 @@
       "id": "KPnlb64o",
       "createdAt": 1703835264009,
       "updatedAt": 1703835272800
+    },
+    {
+      "name": "Python",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "uqstRXKD",
+      "createdAt": 1708134540035,
+      "updatedAt": 1708134543337
     }
   ],
   "snippets": [
@@ -69,12 +79,12 @@
         "Z7C4DS8E"
       ],
       "description": "A list of useful commands",
-      "name": "useful commands",
+      "name": "workflow",
       "content": [
         {
           "label": "workflow",
           "language": "r",
-          "value": "#--------------- Load packages\n\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# or\n\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)\n\n#--------------- Directory\n\nsetwd(\"/path/to/your/directory\")\n\ngetwd()\n\ndir() # or\ndir(\"/path/to/directory\")\n\nlist.files() #  Lists files in a directory\nlist.dirs()  # Lists subdirectories within a directory\nls() # Lists objects in the current workspace\n\n#--------------- Import data\n\n# Import csv file\ndata.name <-  read.csv(\"path/to/file.csv\")\n\n# Import data as date\ndata <- read.csv((\"path/to/file.csv\"), stringsAsFactors = FALSE)\n\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# Import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# Unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)\n\n#--------------- Import source\n\nsource(\"path/to/theme.R\")\nsource(\"path/to/functions.R\")\n\n#--------------- Export\n\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE) # Export csv\n\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600) # Export ggplot\n\n#--------------- Clean environment\n\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n#--------------- Help\n\nhelp(\"mean\") # Accesses help documentation for a function (e.g., \"mean\").\n\nhelp(package = \"stats\") # Accesses help documentation for a package (e.g., \"stats\")."
+          "value": "#--------------- Load packages\n\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# or\n\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)\n\n#--------------- Directory\n\nsetwd(\"/path/to/your/directory\")\n\ngetwd()\n\ndir() # or\ndir(\"/path/to/directory\")\n\nlist.files() #  Lists files in a directory\nlist.dirs()  # Lists subdirectories within a directory\nls() # Lists objects in the current workspace\n\n#--------------- Import data\n\n# Import csv file\ndata.name <-  read.csv(\"path/to/file.csv\")\n# header = TRUE\n\n# Import data as date\ndata <- read.csv((\"path/to/file.csv\"), stringsAsFactors = FALSE)\n\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# Import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# Unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)\n\n#--------------- Import source\n\nsource(\"path/to/theme.R\")\nsource(\"path/to/functions.R\")\n\n#--------------- Export\n\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE) # Export csv\n\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600) # Export ggplot\n\n#--------------- Clean environment\n\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n#--------------- Help\n\nhelp(\"mean\") # Accesses help documentation for a function (e.g., \"mean\").\n\nhelp(package = \"stats\") # Accesses help documentation for a package (e.g., \"stats\")."
         },
         {
           "label": "operators / usuful commands",
@@ -84,7 +94,7 @@
       ],
       "id": "trWQpM5O",
       "createdAt": 1667794687865,
-      "updatedAt": 1706980605741
+      "updatedAt": 1708469327676
     },
     {
       "isDeleted": false,
@@ -204,7 +214,7 @@
         {
           "label": "ggplot2",
           "language": "r",
-          "value": "#--------------- Basic structure\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name)) +\n  # geom_bar()\n  # geom_point()\n  # geom_line()\n  # geom_histogram()\n  # geom_boxplot()\n\n#--------------- Facet wrap\n\n\tfacet_wrap(~col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n  \n#--------------- Bar plot\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1) # position stack / dodge\n\n# Reorder bars\n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name))\n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy)))\n\tscale_fill_manual(values = c(colors-palette)) # Color\n\n# Text\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n\tgeom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n\t\t\t\t\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n#--------------- Line plot\n\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n# Create a circle -- date\n\n\tannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n  \t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# Add text to circle -- date\n\tannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\t y = y, label = \"Lorem Ipsum\")"
+          "value": "#--------------- Basic structure\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name)) +\n  geom_point()\n  # geom_bar()\n  # geom_line()\n  # geom_histogram()\n  # geom_boxplot()\n  # geom_jitter()\n  # geom_density()\n  # geom_tile() / Heat map\n  # geom_smooth(method = \"lm\")\n  \n#--------------- Facet wrap\n\n\tfacet_wrap(~col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n  \n#--------------- Bar plot\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1) # position stack / dodge\n\n# Reorder bars\n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name))\n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy)))\n\tscale_fill_manual(values = c(colors-palette)) # Color\n\n# Text\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n\tgeom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n\t\t\t\t\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n#--------------- Line plot\n\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n# Create a circle -- date\n\n\tannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n  \t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# Add text to circle -- date\n\tannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\t y = y, label = \"Lorem Ipsum\")"
         },
         {
           "label": "style",
@@ -214,7 +224,7 @@
       ],
       "id": "XhBOzAag",
       "createdAt": 1686102344686,
-      "updatedAt": 1706981360724
+      "updatedAt": 1710633680604
     },
     {
       "isDeleted": false,
@@ -230,12 +240,12 @@
         {
           "label": "columns",
           "language": "r",
-          "value": "#--------------- Select\n\ndf %>% select(-c(col_name))\ndf %>% select(c(col_name))\ndf %>% select((3:10), (26:41), 43) # Select by position\ndf %>% select((col_name1:col_name10)) # Select by name / position\ndf %>% select(-(col_name1:col_name10)) # Selects columns except those from year to day.\n\n# Select helpers\ndf %>% select(contains(\"Lorem Ipsum\"))\ndf %>% select(ends_with(\"_lipsum\"))\ndf %>% select(starts_with(\"lipsum_\"))\ndf %>% select(num_range(\"lipsum\", 1:4))\n\n# ends_with()\n# starts_with()\n# contains()\n# num_range()\n\n#--------------- Relocate\n\ndf %>% relocate(col_name, .before = col_name)    \ndf %>% relocate(col_name, .after = col_name)\n\n#--------------- Mutate\n\ndf %>% mutate(new_col = \"Lorem Ipsum\")\ndf %>% mutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \ndf %>% mutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\ndf %>% mutate(new_col = (col_name + col_name)) # Check operator in the useful commands sections\ndf %>% mutate(col_name = excel_numeric_to_date(col_name)) # janitor\ndf %>% mutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")\n\ndf %>% mutate_if(is.numeric, ~replace(., is.na(.), 0)) # Replace NA values\n\ndf %>% mutate(col_name = case_when(x < 3 ~ \"low\", # Case when\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t x >= 3 & x < 5 ~ \"medium\",\n      \t\t\t\t\t\t\t\t\t\t\t\t\t\t x >= 5 ~ \"high\"\n    )\n  )\n\n#--------------- Rename colums\n\ndf %>% rename(new_name = old_name)\n\n#--------------- Operations\n\ndf %>% \n  group_by(col_name) %>% \n  count(col_name2)\n  \ndf %>% # Summarizes data by computing statistics for groups\n  group_by(col_name) %>% \n  summarise(n = sum(col_name))\n\n#--------------- Create a function\n\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}"
+          "value": "#--------------- Select\n\ndf %>% select(-c(col_name))\ndf %>% select(c(col_name))\ndf %>% select((3:10), (26:41), 43) # Select by position\ndf %>% select((col_name1:col_name10)) # Select by name / position\ndf %>% select(-(col_name1:col_name10)) # Selects columns except those from year to day.\n\n# Select helpers\ndf %>% select(contains(\"Lorem Ipsum\"))\ndf %>% select(ends_with(\"_lipsum\"))\ndf %>% select(starts_with(\"lipsum_\"))\ndf %>% select(num_range(\"lipsum\", 1:4))\n\n# ends_with()\n# starts_with()\n# contains()\n# num_range()\n\n#--------------- Relocate\n\ndf %>% relocate(col_name, .before = col_name)    \ndf %>% relocate(col_name, .after = col_name)\n\n#--------------- Mutate\n\ndf %>% mutate(new_col = \"Lorem Ipsum\")\ndf %>% mutate(new_col = case_when(col_name == value ~ \"Lorem Ipsum\")                \ndf %>% mutate(new_col = case_when(col_name == \"Lorem Ipsum\" ~ 3))\ndf %>% mutate(new_col = (col_name + col_name)) # Check operator in the useful commands sections\ndf %>% mutate(col_name = excel_numeric_to_date(col_name)) # janitor\ndf %>% mutate(tipo_sec = replace(col_name, col_name == 2, \"Lorem Ipsum\")\n\ndf %>% mutate_if(is.numeric, ~replace(., is.na(.), 0)) # Replace NA values\n\ndf %>% mutate(col_name = case_when(x < 3 ~ \"low\", # Case when\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t x >= 3 & x < 5 ~ \"medium\",\n      \t\t\t\t\t\t\t\t\t\t\t\t\t\t x >= 5 ~ \"high\"\n    )\n  )\n\ndf %>%\n  mutate(col_name = recode(original_variable, \n                                      \"A\" = \"X\",\n                                      \"B\" = \"Y\",\n                                      \"C\" = \"Z\",\n                                      .default = \"Others\"))\n                                      \n#--------------- Rename colums\n\ndf %>% rename(new_name = old_name)\n\n#--------------- Operations\n\ndf %>% \n  group_by(col_name) %>% \n  count(col_name2)\n  \ndf %>% # Summarizes data by computing statistics for groups\n  group_by(col_name) %>% \n  summarise(n = sum(col_name))\n  \ndf %>%\n  group_by(group) %>%\n  summarise(count = n())\n\n#--------------- Create a function\n\nname <- function(df) {\n  df %>%\n  clean_names() %>%\n}\n\n#--------------- Lag\n\nlag(data, n = 1, order_by = variable)\n\n\n#--------------- fastDummies\n\nlibrary(fastDummies)\n\ndf <- dummy_cols(df, select_columns = \"x1\") # fastDummies"
         },
         {
           "label": "rows",
           "language": "r",
-          "value": "#--------------- Filter\n\ndf %>% filter(!is.na(col_name)) \ndf %>% filter(!row_number() %in% c(1))\ndf %>% filter(col_name != \"Lorem Ipsum\")\ndf %>% filter(col_name1 == 1, col_name2 == 1, col_name3 > 99) # Check operator in the useful commands sections\ndf %>% filter(col_name %in% c(1, 2))\n\n#--------------- Arrange\n\ndf %>% arrange(col_name) # Orders rows based on variables\ndf %>% arrange(desc(col_name))\n\tdf %>% arrange(-(col_name))\n\n#--------------- Remove rows (176 = row number)\n\n# Remove rows (176 = row number)\ndf <-  df[-c(176, 177), ]\n\n# Slice head\nslice_head(n = 0)\nslice(1:3) # Obs from 1:3\n\n#--------------- Bind\n\ndata <-  bind_rows(df1, df1)\n\n#--------------- Row numbers\n\nrow_number() # Assigns unique row numbers\n\n#--------------- Change value \"Lorem Ipsum\" to NA\n\ndf[df == \"Lorem Ipsum\"] <- NA\n\n#-------------- Pull\nstarwars %>%\n\tfilter(species == \"Droid\") >%>\n  pull(name)\n  \n  #--------------- Row-wise to calculate the sum of each row\n\ndf %>% rowwise() %>%\n  mutate(row_sum = sum(x1, x2)\n  )"
+          "value": "#--------------- Filter\n\ndf %>% filter(!is.na(col_name)) \ndf %>% filter(!row_number() %in% c(1))\ndf %>% filter(col_name != \"Lorem Ipsum\")\ndf %>% filter(col_name1 == 1, col_name2 == 1, col_name3 > 99) # Check operator in the useful commands sections\ndf %>% filter(col_name %in% c(1, 2))\n\n#--------------- Arrange\n\ndf %>% arrange(col_name) # Orders rows based on variables\ndf %>% arrange(desc(col_name))\ndf %>% arrange(-(col_name))\n\n#--------------- Remove rows (176 = row number)\n\n# Remove rows (176 = row number)\ndf <-  df[-c(176, 177), ]\n\n# Slice head\nslice_head(n = 0)\nslice(1:3) # Obs from 1:3\n\n#--------------- Bind\n\ndata <- bind_rows(df1, df1)\n\n#--------------- Row numbers\n\nrow_number() # Assigns unique row numbers\n\n#--------------- Change value \"Lorem Ipsum\" to NA\n\ndf[df == \"Lorem Ipsum\"] <- NA\n\n#-------------- Pull\nstarwars %>%\n\tfilter(species == \"Droid\") >%>\n  pull(name)\n  \n  #--------------- Row-wise to calculate the sum of each row\n\ndf %>% rowwise() %>%\n  mutate(row_sum = sum(x1, x2)\n  )"
         },
         {
           "label": "clean & explore",
@@ -250,7 +260,7 @@
       ],
       "id": "kaGVK7Ys",
       "createdAt": 1686104485747,
-      "updatedAt": 1706980958015
+      "updatedAt": 1710637456213
     },
     {
       "isDeleted": false,
@@ -276,19 +286,26 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "KPnlb64o",
-      "tagsIds": [],
+      "tagsIds": [
+        "rNAkcP8S"
+      ],
       "description": null,
       "name": "thesis commands",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "thesis",
           "language": "latex",
           "value": "% Section formatting\n\n\\part{Your Part Title}\n\\chapter{Your Chapter Title}\n\\section{Your Section Title}\n\\subsection{Your Subsection Title}\n\\subsubsection{Your Subsubsection Title}\n\\paragraph{Your Paragraph Title}\n\\subparagraph{Your Subparagraph Title}\n\n% Text size\n\n\\Huge\n\\huge\n\\LARGE\n\\Large\n\\large\n\\normalsize\n\\small\n\\footnotesize\n\\scriptsize\n\\tiny\n\n% Font shapes\n\n\\emph{} % This is Italic Shape\n\\scshape{} % This is Small Caps Shape\n\n% New thought block\n\n\\newthought{Your new thought here} \n\n% Analytical Index entries\n\n\\analyticentry{Your Index Term 1}\n\\analytics{Your Index Term 1}\n\n% Label and References\n\n\\hyperref[tab:figura1]{Figura \\ref{fig:figura1}}\n\n\\label{tab:tabla1} % Table reference\n\\label{apendiceA} % Appendices references\n\\label{introduction} % Chapter reference\n\n% Center environment\n\n\\begin{center}\n  Your centered content goes here\n\\end{center}\n\n% Itemize and enumerate environments\n\n\\begin{itemize}\n  \\item Your item 1\n  \\item Your item 2\n\\end{itemize}\n\n\\begin{enumerate}\n  \\item Your item 1\n  \\item Your item 2\n\\end{enumerate}\n\n% Quote Environment\n\n\\begin{quote}\n  \\lipsum[2]\n\\end{quote}\n\n% Savequote environment\n\n\\begin{savequote}[85mm]\n  \\small{Your quote here.}\n  \\qauthor{Your Author}\n\\end{savequote}\n\n% Equation Environment\n\n\\begin{equation}\nx = 1\n\\end{equation}\n\n% Figure Environment\n\n\\begin{figure}[H]\n    \\centering \n        \\includegraphics[width = \\textwidth]{figures/fig#}\n        \\caption[Lorem Ipsum]{Proin at eros...\n    \\label{fig:figura#}}\n\\end{figure}\n\n% Full page figure Environment\n\n\\newpage\n\\thispagestyle{empty}\n\\begin{landscape}\n\\thispagestyle{empty}\n  \\begin{figure}[p]\n    \\centering\n    \\includegraphics[width = \\linewidth, keepaspectratio]{figures/fig#.png}\n    \\caption[Lorem Ipsum]{Proin at eros...}\n    \\label{fig:figura#}\n  \\end{figure}\n\\end{landscape}\n\n% Code Listing Environment\n\n\\begin{lstlisting}[language = R, caption = Lorem Ipsum]\n\tLorem Ipsum\n\\end{lstlisting}\n\n% Footnotes\n\n\\footnote{Lorem ipsum.}\\textsuperscript{,}\\footnote{Lorem ipsum.}\n\n\\footnote{\\lipsum[8]}\n\n% References\n\n% The references.bib file contains the references. By default, the references are cited in the APSA style. \n% Use the command \\citep{} to manage the references.\n\n\\citep{BibTeX key, BibTeX key}\n\n\\citep[pg.~32]{BibTeX key}\n\n\\citep{BibTeX key}\n\n\\citep[\\emph{véase}][pg.~5]{BibTeX key}\n\n\\citep[Chap.~5]{BibTeX key}\n\n% Page settings\n\n\\blankpage % Add a blank page\n\\newpage % Add a new page"
+        },
+        {
+          "label": "commands",
+          "language": "markdown",
+          "value": "# Check errors from terminal\n% pdflatex your_document.tex"
         }
       ],
       "id": "ppG31YcS",
       "createdAt": 1703835274418,
-      "updatedAt": 1704166923704
+      "updatedAt": 1710638024155
     },
     {
       "isDeleted": false,
@@ -314,23 +331,62 @@
     {
       "isDeleted": false,
       "isFavorites": false,
+      "folderId": "uqstRXKD",
+      "tagsIds": [],
+      "description": null,
+      "name": "commands",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy"
+        }
+      ],
+      "id": "Rc0iifVH",
+      "createdAt": 1708134544906,
+      "updatedAt": 1708212471631
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": null,
-      "name": "plot()",
+      "name": "regression",
       "content": [
         {
           "label": "Fragment 1",
           "language": "r",
-          "value": ""
+          "value": "#--------------- Basic ggplot regression\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = F)\n  \n#--------------- Linear regression model (OLS)\n\n# Libraries\nlibrary(stargazer)\nlibrary(broom)\n\n# Linear regression model\nmodel <- lm(y ~ x1 + x2 + x3 + ..., data = df)\n\n# Statistics\nsummary(model)\ntidy(model)\naugment(model)\nstargazer(model)\n\n#--------------- Fixed effects\n\n# Fit a linear model with multiple group fixed effects"
         }
       ],
-      "id": "wml5htxJ",
-      "createdAt": 1706981034705,
-      "updatedAt": 1706981383710
+      "id": "rt8Krbld",
+      "createdAt": 1710633378972,
+      "updatedAt": 1710637925919
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "Z7C4DS8E",
+        "OJvlNdx5"
+      ],
+      "description": null,
+      "name": "sf",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "#--------------- Basix maps structures\n\nlibrary(ggplot2)\nlibrary(sf)\n\n# Load your spatial data, for example, a shapefile\n# Assuming you have an sf object called 'map_data' containing your spatial data\n# Make sure to have 'geometry', 'lon' (longitude), and 'lat' (latitude) columns in 'map_data'\n\n# Set up coordinates\nmap_data <- st_transform(map_data, crs = \"+proj=longlat +datum=WGS84\")\n\n# Create the map\nggplot() +\n  geom_sf(data = map_data) +  # Add geometry (polygons, lines, etc.)\n  geom_point(data = map_data, aes(x = lon, y = lat))  # Add points (optional)"
+        }
+      ],
+      "id": "47JFuhpn",
+      "createdAt": 1710633682200,
+      "updatedAt": 1710633851992
     }
   ],
   "tags": [
@@ -363,6 +419,18 @@
       "id": "CAuKhm2A",
       "createdAt": 1668233892571,
       "updatedAt": 1668233892571
+    },
+    {
+      "name": "LaTex",
+      "id": "rNAkcP8S",
+      "createdAt": 1710638003175,
+      "updatedAt": 1710638003175
+    },
+    {
+      "name": "La",
+      "id": "vzuwza1B",
+      "createdAt": 1710638007637,
+      "updatedAt": 1710638007637
     }
   ]
 }
