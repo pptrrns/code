@@ -31,16 +31,6 @@
       "id": "KPnlb64o",
       "createdAt": 1703835264009,
       "updatedAt": 1703835272800
-    },
-    {
-      "name": "Python",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "plain_text",
-      "id": "uqstRXKD",
-      "createdAt": 1708134540035,
-      "updatedAt": 1708134543337
     }
   ],
   "snippets": [
@@ -110,12 +100,12 @@
         {
           "label": "Fragment 1",
           "language": "markdown",
-          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n% ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# Undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# Discards all history and changes back to the specified commit\ngit reset --hard [commit]\n\n# forzar un push (cuando se borra un commit local)\n## Revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force\n\n# remove a file, (rm data.tmp)\nrm [file]\t\n\n# remove with confirmation\nrm -i [file]\n\n# lets you open up the directory in finder\nopen.\n\n# allows you to view the registration details of a given domain, such as the name, address, and phone number of the registrant (whois google.com)\nwhois \n\n# prompts your Mac to speak out loud in its native voice whatever you\nwrite after the say prompt (say Hello My Name is Alf)\nsay\n\n# clean terminal\ncommand+K"
+          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n% ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# consulta la rama actual\ngit branch \n\t\n  # actualizar rama con cambios de un branch\n\tgit checkout branch/name\n  \n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# discards all history and changes back to the specified commit\ngit reset --hard [commit]\ngit reset --hard\n\n# forzar un push (cuando se borra un commit local)\n## revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force\n\n# remove a file, (rm data.tmp)\nrm [file]\t\n\n# remove with confirmation\nrm -i [file]\n\n# lets you open up the directory in finder\nopen.\n\n# allows you to view the registration details of a given domain, such as the name, address, and phone number of the registrant (whois google.com)\nwhois \n\n# prompts your Mac to speak out loud in its native voice whatever you\nwrite after the say prompt (say Hello My Name is Alf)\nsay\n\n# clean terminal\ncommand+K"
         }
       ],
       "id": "rd2lTa0N",
       "createdAt": 1667826253726,
-      "updatedAt": 1705715358497
+      "updatedAt": 1719673078201
     },
     {
       "isDeleted": false,
@@ -260,7 +250,7 @@
       ],
       "id": "kaGVK7Ys",
       "createdAt": 1686104485747,
-      "updatedAt": 1710637456213
+      "updatedAt": 1716222349127
     },
     {
       "isDeleted": false,
@@ -329,22 +319,24 @@
       "updatedAt": 1705714411919
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
-      "folderId": "uqstRXKD",
-      "tagsIds": [],
+      "folderId": "",
+      "tagsIds": [
+        "7brm9r2t"
+      ],
       "description": null,
       "name": "commands",
       "content": [
         {
           "label": "Fragment 1",
           "language": "plain_text",
-          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy"
+          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy\n\n~ % jupyter notebook"
         }
       ],
       "id": "Rc0iifVH",
       "createdAt": 1708134544906,
-      "updatedAt": 1708212471631
+      "updatedAt": 1719672905825
     },
     {
       "isDeleted": false,
@@ -387,6 +379,48 @@
       "id": "47JFuhpn",
       "createdAt": 1710633682200,
       "updatedAt": 1710633851992
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "ZuysXm8A",
+        "CAuKhm2A"
+      ],
+      "description": null,
+      "name": "promoApp_env ~ workflow",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "# cd\n% cd ~/Documents/GitHub \n\n# clone repo\n% git clone git@ssh.dev.azure.com:v3/KOF-Data-Lake/PlatformAnalytics/PlatformAnalytics\n\n# cd\n% cd ~/Documents/GitHub/PlatformAnalytics\n% ls\n\n# status\n% git status\n\n# branch\n% git branch -a\n\n# Checkout\n% git checkout -b LLMs_Corrected origin/LLMs_Corrected\n\n# status\n% git status\n% ls\n\n# LLMs\n% cd LLMs \n% ls\n\n# PromoApp\n% cd PromoApp \n% ls\n\n# virtualenv\n% virtualenv --python=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 promoapp_env\n\n# activate\n% source promoapp_env/bin/activate\n\n# python\n% which python           \n\n# install requirements\n% pip install -r requirements.txt\n\n# run app\n% wave run src.app\n\n# local-hoszt\nhttp://localhost:10101/"
+        }
+      ],
+      "id": "7hq81Brs",
+      "createdAt": 1719672826405,
+      "updatedAt": 1719672863428
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "7brm9r2t",
+        "luwo8mth"
+      ],
+      "description": null,
+      "name": "python",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy\n\n~ % jupyter notebook"
+        }
+      ],
+      "id": "W69caEXo",
+      "createdAt": 1719672891312,
+      "updatedAt": 1719672900737
     }
   ],
   "tags": [
@@ -431,6 +465,18 @@
       "id": "vzuwza1B",
       "createdAt": 1710638007637,
       "updatedAt": 1710638007637
+    },
+    {
+      "name": "python3",
+      "id": "luwo8mth",
+      "createdAt": 1718748130717,
+      "updatedAt": 1718748130717
+    },
+    {
+      "name": "python",
+      "id": "7brm9r2t",
+      "createdAt": 1718748138001,
+      "updatedAt": 1718748138001
     }
   ]
 }
