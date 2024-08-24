@@ -12,14 +12,14 @@
       "index": 0
     },
     {
-      "name": "Commands",
+      "name": "Bash",
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
       "defaultLanguage": "markdown",
       "id": "kUTrDM6K",
       "createdAt": 1667787411771,
-      "updatedAt": 1668023356756,
+      "updatedAt": 1724521029536,
       "index": 1
     },
     {
@@ -31,6 +31,16 @@
       "id": "KPnlb64o",
       "createdAt": 1703835264009,
       "updatedAt": 1703835272800
+    },
+    {
+      "name": "Databricks",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "Wc_b5XkS",
+      "createdAt": 1721938326535,
+      "updatedAt": 1721938335724
     }
   ],
   "snippets": [
@@ -39,34 +49,29 @@
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
-        "IyXoXMjs",
-        "ZuysXm8A"
+        "LloOeJ8a",
+        "IyXoXMjs"
       ],
       "description": "Code for downloading websites as .html files.",
       "name": "wget",
       "content": [
         {
-          "label": "commands",
-          "language": "markdown",
-          "value": "# install\nbrew install wget\n\n# code\nwget -O YOUR-FILENAME.html URL\nwget -P path/to/save/files URL"
-        },
-        {
-          "label": "example",
-          "language": "markdown",
-          "value": "# example\nwget -P /Users/jtorrensh/Desktop/wget https://portalanterior.ine.mx/documentos/RESELEC/estadisticas2003/diputados_mr/casillas/1-01.html"
+          "label": "bash",
+          "language": "sh",
+          "value": "# Install\nbrew install wget\n\n# Code\nwget -O YOUR-FILENAME.html URL\nwget -P path/to/save/files URL\n\n# Example\nwget -P /Users/jtorrensh/Desktop/wget https://portalanterior.ine.mx/documentos/RESELEC/estadisticas2003/diputados_mr/casillas/1-01.html"
         }
       ],
       "id": "h72dK0kS",
       "createdAt": 1667787465004,
-      "updatedAt": 1668233810273
+      "updatedAt": 1724521098171
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": "A list of useful commands",
       "name": "workflow",
@@ -74,7 +79,7 @@
         {
           "label": "workflow",
           "language": "r",
-          "value": "#--------------- Load packages\n\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# or\n\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)\n\n#--------------- Directory\n\nsetwd(\"/path/to/your/directory\")\n\ngetwd()\n\ndir() # or\ndir(\"/path/to/directory\")\n\nlist.files() #  Lists files in a directory\nlist.dirs()  # Lists subdirectories within a directory\nls() # Lists objects in the current workspace\n\n#--------------- Import data\n\n# Import csv file\ndata.name <-  read.csv(\"path/to/file.csv\")\n# header = TRUE\n\n# Import data as date\ndata <- read.csv((\"path/to/file.csv\"), stringsAsFactors = FALSE)\n\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# Import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# Unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)\n\n#--------------- Import source\n\nsource(\"path/to/theme.R\")\nsource(\"path/to/functions.R\")\n\n#--------------- Export\n\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE) # Export csv\n\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600) # Export ggplot\n\n#--------------- Clean environment\n\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n#--------------- Help\n\nhelp(\"mean\") # Accesses help documentation for a function (e.g., \"mean\").\n\nhelp(package = \"stats\") # Accesses help documentation for a package (e.g., \"stats\")."
+          "value": "#--------------- Load packages\n\ninstalled.packages()\nlibrary(\"Lorem Ipsum\")\n\n# or\n\nif(!require(pacman)) install.packages(\"pacman\")\npacman::p_load(library1, library2, library3)\n\n# or\n\npaquetes <- c(\"ggplot2\", \"dplyr\", \"tidyr\", \"readr\", \"purrr\", \"tibble\", \"stringr\", \"forcats\")\n\nsapply(paquetes,\n      function(x) {\n        if(!x %in% rownames(installed.packages()))\n          install.packages(x)\n        require(x, character.only=T)\n      })\n\n#--------------- Directory\n\nsetwd(\"/path/to/your/directory\")\n\ngetwd()\n\ndir() # or\ndir(\"/path/to/directory\")\n\nlist.files() #  Lists files in a directory\nlist.dirs()  # Lists subdirectories within a directory\nls() # Lists objects in the current workspace\n\n#--------------- Import data\n\n# Import csv file\ndata.name <-  read.csv(\"path/to/file.csv\")\n# header = TRUE\n\n# Import data as date\ndata <- read.csv((\"path/to/file.csv\"), stringsAsFactors = FALSE)\n\ndf$date <- as.Date(df$date, format = \"%d/%m/%y\")\n\n# Import xlsx list\nfiles <- list(df1 = (\"path/to/file.xlsx\"),\n              da2 = (\"path/to/file.xlsx\")))\n\ndata <- read_xlsx(files$df1, sheet = 1)\n\n# Unzip files\nlibrary(here)\nunzip(\"path/to/zip\", \"file_name.csv\",\n      exdir = \"path/to/unzip\")\n      \nfiles <- list(df1 = here(\"path/to/unzip/df1\"),\n              df2 = here(\"path/to/unzip/df2\"))\n              \ndata <- read.csv(files$df1)\n\n#--------------- Import source\n\nsource(\"path/to/theme.R\")\nsource(\"path/to/functions.R\")\n\n#--------------- Export\n\nwrite.csv(df, \"path/to/file.csv\", row.names = FALSE) # Export csv\n\nggsave(\"/path/plot.png\", width = 16, height = 10, dpi = 600) # Export ggplot\n\n#--------------- Clean environment\n\nrm(list= ls()[!(ls() %in% c('Lorem Ipsum','Lorem Ipsum'))])\n\n#--------------- Help\n\nhelp(\"mean\") # Accesses help documentation for a function (e.g., \"mean\").\n\nhelp(package = \"stats\") # Accesses help documentation for a package (e.g., \"stats\")."
         },
         {
           "label": "operators / usuful commands",
@@ -84,36 +89,36 @@
       ],
       "id": "trWQpM5O",
       "createdAt": 1667794687865,
-      "updatedAt": 1708469327676
+      "updatedAt": 1724521200193
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
-        "ZuysXm8A",
-        "CAuKhm2A"
+        "LloOeJ8a",
+        "GBgQvE41"
       ],
       "description": "Let’s Git Started -- Beginner’s Guide to Git & Github",
       "name": "git started",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "markdown",
-          "value": "# cambia de directorio\n~ % cd ~/path/to/repo\t\t\n\n# lista archivos del directorio\n% ls\t\t\t\t\t\t\t\t\t\n\n# da el estado del repositorio\ngit status\n\n# sube todo lo que haya cambiado al estrado\ngit add .\n\n# saca foto y la almacena en la bitácora con un comentario \ngit commit -m 'Comentario'  \n\n# lista los alias del repositorio en tu máquina y en github ( master y origin por default)\ngit remote -v\n\n# jala cambios de origin (alias del repo en tu github) a master (alias del repo en tu máquina)\ngit pull origin master \n\n# empuja cambios de master (alias del repo en tu máquina) a origin (alias del repo en tu github)\ngit push origin master\n\n# consulta la rama actual\ngit branch \n\t\n  # actualizar rama con cambios de un branch\n\tgit checkout branch/name\n  \n# visita la foto identificada por un número\ngit checkout num-del-commit\n\n# regresa a la foto más reciente del repositorio\ngit checkout master\n\n# listar commits de manera abreviada\ngit log --pretty=oneline --abbrev-commit\n\n# undoes all commits after [commit], preserving changes locally \ngit reset [commit]\n\n# discards all history and changes back to the specified commit\ngit reset --hard [commit]\ngit reset --hard\n\n# forzar un push (cuando se borra un commit local)\n## revisar: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force\n\n# remove a file, (rm data.tmp)\nrm [file]\t\n\n# remove with confirmation\nrm -i [file]\n\n# lets you open up the directory in finder\nopen.\n\n# allows you to view the registration details of a given domain, such as the name, address, and phone number of the registrant (whois google.com)\nwhois \n\n# prompts your Mac to speak out loud in its native voice whatever you\nwrite after the say prompt (say Hello My Name is Alf)\nsay\n\n# clean terminal\ncommand+K"
+          "language": "sh",
+          "value": "# Change directory\n~ % cd ~/path/to/repo\t\t\n\n# List files in the directory\n% ls\t\t\t\t\t\t\t\t\t\n\n# Display the status of the repository\ngit status\n\n# Stage all changed files for the next commit\ngit add .\n\n# Take a snapshot and store it in the log with a comment\ngit commit -m 'Comment'  \n\n# List the repository aliases on your machine and on GitHub (default are master and origin)\ngit remote -v\n\n# Pull changes from origin (alias of the repo on GitHub) to master (alias of the repo on your machine)\ngit pull origin master \n\n# Push changes from master (alias of the repo on your machine) to origin (alias of the repo on GitHub)\ngit push origin master\n\n# List local branches (Check the current branch)\ngit branch\n\n# List all remote branches\ngit branch -r\n\n# List both local and remote branches\ngit branch -a\n\n# Switch to a different branch\ngit checkout branch/name\n  \n# Checkout a specific commit by its identifier\ngit checkout num-del-commit\n\n# Return to the most recent commit on the master branch\ngit checkout master\n\n# List commits in a shortened format\ngit log --pretty=oneline --abbrev-commit\n\n# Undo all commits after [commit], preserving changes locally\ngit reset [commit]\n\n# Discard all history and changes back to the specified commit\ngit reset --hard [commit]\ngit reset --hard\n\n# Force a push (useful when a local commit is deleted)\n## Refer to: https://7sabores.com/blog/como-revertir-un-push-git\ngit push origin +master\ngit push --force\n\n# Remove a file (e.g., rm data.tmp)\nrm [file]\t\n\n# Remove a file with confirmation\nrm -i [file]\n\n# Open the directory in Finder\nopen .\n\n# Clear the terminal\ncommand+K"
         }
       ],
       "id": "rd2lTa0N",
       "createdAt": 1667826253726,
-      "updatedAt": 1719673078201
+      "updatedAt": 1724521059123
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": "The unikn package provides useful color functions — by defining dedicated colors and color palettes, and commands for finding, changing, viewing, and using them — and styled text elements (e.g., for marking, underlining, or plotting colored titles) in R.",
       "name": "colors palette",
@@ -131,14 +136,14 @@
       ],
       "id": "Ay5h8Upn",
       "createdAt": 1667850235165,
-      "updatedAt": 1705715201829
+      "updatedAt": 1724521202977
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
-        "ZuysXm8A",
+        "LloOeJ8a",
         "IyXoXMjs"
       ],
       "description": "Library to convert HTML Tables to Excel file.",
@@ -147,29 +152,19 @@
         {
           "label": "commands",
           "language": "markdown",
-          "value": "# install\npip install html2excel\n\n# code\npython3 -m html2excel input_file output_file"
-        },
-        {
-          "label": "as package",
-          "language": "markdown",
-          "value": "# using as package\nfrom html2excel import ExcelParser\n\ninput_file = '/tmp/text_file.html'\noutput_file = '/tmp/converted_file.xlsx'\n\nparser = ExcelParser(input_file)\nparser.to_excel(output_file)"
-        },
-        {
-          "label": "example",
-          "language": "markdown",
-          "value": "# example\npython3 -m html2excel \"/Users/jtorrensh/Desktop/wget2003/1-01.html\" \"/Users/jtorrensh/Desktop/wget2003/output/1-01.csv\""
+          "value": "# Install\npip install html2excel\n\n# Code\npython3 -m html2excel input_file output_file\n\n# Example\npython3 -m html2excel \"/Users/jtorrensh/Desktop/wget2003/1-01.html\" \"/Users/jtorrensh/Desktop/wget2003/output/1-01.csv\"\n\n# Using as package\nfrom html2excel import ExcelParser\n\ninput_file = '/tmp/text_file.html'\noutput_file = '/tmp/converted_file.xlsx'\n\nparser = ExcelParser(input_file)\nparser.to_excel(output_file)"
         }
       ],
       "id": "3UXcG9fP",
       "createdAt": 1668023286844,
-      "updatedAt": 1668233802084
+      "updatedAt": 1724521155538
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
-        "ZuysXm8A",
+        "LloOeJ8a",
         "IyXoXMjs"
       ],
       "description": "A command line spreadsheet format converter.",
@@ -177,26 +172,21 @@
       "content": [
         {
           "label": "commands",
-          "language": "markdown",
-          "value": "# install\nbrew install gnumeric\n\n# convert all files from xlsx to csv\nssconvert *.xlsx *.csv\n\n# concatenate all csv files and name the new file all.csv\ncat *.csv >> all.csv\n\n# list the file all.csv\nls all.csv\n\n# other info\nhttps://linux.die.net/man/1/ssconvert"
-        },
-        {
-          "label": "example",
-          "language": "plain_text",
-          "value": "# convert all file from xlsx to csv\nssconvert 1-01.xlsx 1-01.csv"
+          "language": "sh",
+          "value": "# Install Gnumeric via Homebrew\nbrew install gnumeric\n\n# Convert all .xlsx files to .csv format\nssconvert *.xlsx *.csv\n\n# Concatenate all .csv files into a single file named all.csv\ncat *.csv >> all.csv\n\n# List the file all.csv to confirm its creation\nls all.csv\n\n# Additional information about ssconvert can be found here\nhttps://linux.die.net/man/1/ssconvert\n\n# Convert all file from .xlsx to .csv\nssconvert 1-01.xlsx 1-01.csv"
         }
       ],
       "id": "1KtvDkec",
       "createdAt": 1668139525990,
-      "updatedAt": 1687551981964
+      "updatedAt": 1724521051487
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": "Code for plots in RStudio using ggplot2",
       "name": "ggplot2",
@@ -204,25 +194,25 @@
         {
           "label": "ggplot2",
           "language": "r",
-          "value": "#--------------- Basic structure\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name)) +\n  geom_point()\n  # geom_bar()\n  # geom_line()\n  # geom_histogram()\n  # geom_boxplot()\n  # geom_jitter()\n  # geom_density()\n  # geom_tile() / Heat map\n  # geom_smooth(method = \"lm\")\n  \n#--------------- Facet wrap\n\n\tfacet_wrap(~col_name, ncol = 2, strip.position = \"top\", scales = \"free_x\")\n  \n#--------------- Bar plot\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1) # position stack / dodge\n\n# Reorder bars\n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name))\n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy)))\n\tscale_fill_manual(values = c(colors-palette)) # Color\n\n# Text\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n\tgeom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n\t\t\t\t\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n#--------------- Line plot\n\n  \tgeom_line(color = \"color\", size = 1, alpha = 1)\n\n# Create a circle -- date\n\n\tannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n  \t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# Add text to circle -- date\n\tannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\t y = y, label = \"Lorem Ipsum\")"
+          "value": "#--------------- Basic structure\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name)) +\n  geom_point()\n  # geom_bar()\n  # geom_line()\n  # geom_histogram()\n  # geom_boxplot()\n  # geom_jitter()\n  # geom_density()\n  # geom_tile() ~ Heat map\n  # geom_smooth(method = \"lm\")\n  \n#--------------- Facet wrap\n\nfacet_wrap(~ var_01, ncol = 3, strip.position = \"top\", sacles = \"free_y\")\n\n#--------------- Bar plot\n\ndf %>% \n  ggplot(aes(x = col_name , y = col_name, fill = col_name))\n    geom_bar(position = \"stack\", stat = \"identity\", alpha = 1) # position stack / dodge\n\n# Reorder bars\n\tggplot(aes(x = reorder(axis_x, -axis_y), y = axis_y, fill = col_name))\n  ggplot(aes(x = axisx, y = axisy, fill = reorder(axisx, -axisy)))\n\tscale_fill_manual(values = c(colors-palette)) # Color\n\n# Text\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_dodge(0.9), vjust = -1)\n\n\tgeom_text(aes(label = axis_y), color = \"#000000\", size = 1, position = position_identity(), hjust = -.5)\n\n\tgeom_text(aes(x = col_name, y = col_name, label = n¡col_name, group = col_name), colour = \"black\", size = 2.5, \n\t\t\t\t\t\t\tcheck_overlap = TRUE, position = position_stack(vjust = .5)\n\n#--------------- Line plot\n\n geom_line(color = \"color\", size = 1, alpha = 1)\n\n# Create a circle -- date\n\n\tannotate(geom = \"point\", x = as.Date(\"yyyy-mm-dd\"), \n  \t\t\t\t\ty = y, size = 10, shape = 21, fill = \"transparent\")\n\n# Add text to circle -- date\n\tannotate(geom = \"text\", x = as.Date(\"yyyy-mm-dd\"), \n\t\t\t\t\t y = y, label = \"Lorem Ipsum\")"
         },
         {
           "label": "style",
           "language": "r",
-          "value": "#--------------- Axis\n\ncoord_flip()\n\nylim(ymin, yend) # limits\nxlim(xmin, xend) # limits\n\nscale_x_date(date_breaks = \"1 week\", date_labels = \"%d/%m\") # Axis scale dates\n\nscale_y_continuous(limits=c(0,0), breaks=0:0) # Axis limits continuous\nscale_y_continuous(breaks = seq(0, 0, by = 0)) # Axis limits continuous\n\n#--------------- Title, subtitle & axis names\n\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n     caption = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")\n     \n#--------------- Theme\n\n tema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)\n\n#--------------- Theme grid\n\ntema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
+          "value": "#--------------- Axis\n\ncoord_flip()\n\nylim(ymin, yend) # limits\nxlim(xmin, xend) # limits\n\nscale_x_date(date_breaks = \"1 week\", date_labels = \"%d/%m\") # Axis scale dates\n\nscale_y_continuous(limits=c(0,0), breaks=0:0) # Axis limits continuous\nscale_y_continuous(breaks = seq(0, 0, by = 0)) # Axis limits continuous\n\n# Colors\n\nscale_fill_manual(values = color_palette) # Color\nscale_color_manual(values = color_palette) # Color\n\n#--------------- Title, subtitle & axis names\n\nlabs(title = \"Lorem Ipsum\",\n\t\t subtitle = \"Lorem Ipsum\",\n     caption = \"Lorem Ipsum\",\n\t\t x = \"Lorem Ipsum\",\n     y = \"Lorem Ipsum\")\n     \n#--------------- Theme\n\ntema <- function(){\n  theme()\n  )\n}\n\n tema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)\n\n#--------------- Theme grid\n\ntema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)"
         }
       ],
       "id": "XhBOzAag",
       "createdAt": 1686102344686,
-      "updatedAt": 1710633680604
+      "updatedAt": 1724521206060
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": "Useful functions when working with data",
       "name": "data manipulation",
@@ -250,27 +240,27 @@
       ],
       "id": "kaGVK7Ys",
       "createdAt": 1686104485747,
-      "updatedAt": 1716222349127
+      "updatedAt": 1724521197062
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
-        "ZuysXm8A"
+        "LloOeJ8a"
       ],
       "description": null,
       "name": "sherlock",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "markdown",
-          "value": "# clone the repo\n$ git clone https://github.com/sherlock-project/sherlock.git\n\n# change the working directory to sherlock\n$ cd sherlock\n\n# install the requirements\n$ python3 -m pip install -r requirements.txt"
+          "language": "sh",
+          "value": "# Clone the repository\ngit clone https://github.com/sherlock-project/sherlock.git\n\n# Change the working directory to 'sherlock'\ncd sherlock\n\n# Install the required packages\npython3 -m pip install -r requirements.txt"
         }
       ],
       "id": "tg8QVkoq",
       "createdAt": 1703197037423,
-      "updatedAt": 1703197055936
+      "updatedAt": 1724520639703
     },
     {
       "isDeleted": false,
@@ -280,30 +270,30 @@
         "rNAkcP8S"
       ],
       "description": null,
-      "name": "thesis commands",
+      "name": "thesis",
       "content": [
         {
-          "label": "thesis",
+          "label": "thesis_template",
           "language": "latex",
           "value": "% Section formatting\n\n\\part{Your Part Title}\n\\chapter{Your Chapter Title}\n\\section{Your Section Title}\n\\subsection{Your Subsection Title}\n\\subsubsection{Your Subsubsection Title}\n\\paragraph{Your Paragraph Title}\n\\subparagraph{Your Subparagraph Title}\n\n% Text size\n\n\\Huge\n\\huge\n\\LARGE\n\\Large\n\\large\n\\normalsize\n\\small\n\\footnotesize\n\\scriptsize\n\\tiny\n\n% Font shapes\n\n\\emph{} % This is Italic Shape\n\\scshape{} % This is Small Caps Shape\n\n% New thought block\n\n\\newthought{Your new thought here} \n\n% Analytical Index entries\n\n\\analyticentry{Your Index Term 1}\n\\analytics{Your Index Term 1}\n\n% Label and References\n\n\\hyperref[tab:figura1]{Figura \\ref{fig:figura1}}\n\n\\label{tab:tabla1} % Table reference\n\\label{apendiceA} % Appendices references\n\\label{introduction} % Chapter reference\n\n% Center environment\n\n\\begin{center}\n  Your centered content goes here\n\\end{center}\n\n% Itemize and enumerate environments\n\n\\begin{itemize}\n  \\item Your item 1\n  \\item Your item 2\n\\end{itemize}\n\n\\begin{enumerate}\n  \\item Your item 1\n  \\item Your item 2\n\\end{enumerate}\n\n% Quote Environment\n\n\\begin{quote}\n  \\lipsum[2]\n\\end{quote}\n\n% Savequote environment\n\n\\begin{savequote}[85mm]\n  \\small{Your quote here.}\n  \\qauthor{Your Author}\n\\end{savequote}\n\n% Equation Environment\n\n\\begin{equation}\nx = 1\n\\end{equation}\n\n% Figure Environment\n\n\\begin{figure}[H]\n    \\centering \n        \\includegraphics[width = \\textwidth]{figures/fig#}\n        \\caption[Lorem Ipsum]{Proin at eros...\n    \\label{fig:figura#}}\n\\end{figure}\n\n% Full page figure Environment\n\n\\newpage\n\\thispagestyle{empty}\n\\begin{landscape}\n\\thispagestyle{empty}\n  \\begin{figure}[p]\n    \\centering\n    \\includegraphics[width = \\linewidth, keepaspectratio]{figures/fig#.png}\n    \\caption[Lorem Ipsum]{Proin at eros...}\n    \\label{fig:figura#}\n  \\end{figure}\n\\end{landscape}\n\n% Code Listing Environment\n\n\\begin{lstlisting}[language = R, caption = Lorem Ipsum]\n\tLorem Ipsum\n\\end{lstlisting}\n\n% Footnotes\n\n\\footnote{Lorem ipsum.}\\textsuperscript{,}\\footnote{Lorem ipsum.}\n\n\\footnote{\\lipsum[8]}\n\n% References\n\n% The references.bib file contains the references. By default, the references are cited in the APSA style. \n% Use the command \\citep{} to manage the references.\n\n\\citep{BibTeX key, BibTeX key}\n\n\\citep[pg.~32]{BibTeX key}\n\n\\citep{BibTeX key}\n\n\\citep[\\emph{véase}][pg.~5]{BibTeX key}\n\n\\citep[Chap.~5]{BibTeX key}\n\n% Page settings\n\n\\blankpage % Add a blank page\n\\newpage % Add a new page"
         },
         {
-          "label": "commands",
+          "label": "bash",
           "language": "markdown",
-          "value": "# Check errors from terminal\n% pdflatex your_document.tex"
+          "value": "# Check errors from terminal\n\n% pdflatex your_document.tex"
         }
       ],
       "id": "ppG31YcS",
       "createdAt": 1703835274418,
-      "updatedAt": 1710638024155
+      "updatedAt": 1724521232676
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "DQZWqrP5",
       "tagsIds": [
-        "OJvlNdx5",
-        "Z7C4DS8E"
+        "Z7C4DS8E",
+        "OJvlNdx5"
       ],
       "description": null,
       "name": "electoral",
@@ -316,27 +306,7 @@
       ],
       "id": "o9O0eu0j",
       "createdAt": 1705714387242,
-      "updatedAt": 1705714411919
-    },
-    {
-      "isDeleted": true,
-      "isFavorites": false,
-      "folderId": "",
-      "tagsIds": [
-        "7brm9r2t"
-      ],
-      "description": null,
-      "name": "commands",
-      "content": [
-        {
-          "label": "Fragment 1",
-          "language": "plain_text",
-          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy\n\n~ % jupyter notebook"
-        }
-      ],
-      "id": "Rc0iifVH",
-      "createdAt": 1708134544906,
-      "updatedAt": 1719672905825
+      "updatedAt": 1724521190195
     },
     {
       "isDeleted": false,
@@ -383,44 +353,211 @@
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "kUTrDM6K",
+      "folderId": "Wc_b5XkS",
       "tagsIds": [
-        "ZuysXm8A",
-        "CAuKhm2A"
+        "Z7C4DS8E",
+        "LOf0lSdq"
       ],
       "description": null,
-      "name": "promoApp_env ~ workflow",
+      "name": "R  workflow",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "markdown",
-          "value": "# cd\n% cd ~/Documents/GitHub \n\n# clone repo\n% git clone git@ssh.dev.azure.com:v3/KOF-Data-Lake/PlatformAnalytics/PlatformAnalytics\n\n# cd\n% cd ~/Documents/GitHub/PlatformAnalytics\n% ls\n\n# status\n% git status\n\n# branch\n% git branch -a\n\n# Checkout\n% git checkout -b LLMs_Corrected origin/LLMs_Corrected\n\n# status\n% git status\n% ls\n\n# LLMs\n% cd LLMs \n% ls\n\n# PromoApp\n% cd PromoApp \n% ls\n\n# virtualenv\n% virtualenv --python=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 promoapp_env\n\n# activate\n% source promoapp_env/bin/activate\n\n# python\n% which python           \n\n# install requirements\n% pip install -r requirements.txt\n\n# run app\n% wave run src.app\n\n# local-hoszt\nhttp://localhost:10101/"
+          "language": "r",
+          "value": "# File contained in Databricks\nfile_path <- \"/Workspace/Users/{email}/file.csv\"\n\ndf <- read.csv2(file_path, sep = \",\")\ndf <- copy_to(sc, df, overwrite = TRUE) # Convert to a Spark object\ndf <- df %>% sdf_register(\"df\")\n\n# File in the catalog\nquery <- glue(\" \n   SELECT * FROM `delta`.`table_name`\n   \")\nsdf_table <- sdf_sql(sc, query)\n\n# File in the storage\nfile_path <- \"/mnt/stacdatalabqa01.blob.core.windows.net/testing/testing_torrens/file.csv\"\nsdf_table <- spark_read_csv(sc, file_path) # spark_read_delta / spark_read_parquet\n\ndf <- copy_to(sc, df, overwrite = TRUE) # Convert to a Spark object\ndf <- df %>% sdf_register(\"df\")\n\n# Use sparklyr to read the airlines dataset from 2007\nairlines_sdf <- sparklyr::spark_read_csv(sc = sc,\n                                         name = \"airlines\",\n                                         path = \"/databricks-datasets/asa/airlines/2007.csv\")\n\n# Writing the result to a table in Databricks\ngroup_by(jsonDF, author) %>%\n  count() %>%\n  arrange(desc(n)) %>%\n  spark_write_table(\n    name = \"json_books_agg\",\n    mode = \"overwrite\"\n  )\n\n# Verify that the table was created using sparklyr::sdf_sql\ncollect(sdf_sql(sc, \"SELECT * FROM json_books_agg\"))\n\nfromTable <- spark_read_table(\n  sc = sc,\n  name = \"json_books_agg\"\n)\ncollect(fromTable)\n\n# Handling dates\nsdf <- sdf %>%\n  mutate(month = month(today),\n         year = year(today))\n\nwithUnixTimestamp <- withMMyyyy %>%\n  mutate(formatted_date = date_format(today, \"yyyy-MM-dd\"),\n         day = dayofmonth(formatted_date))\n\n# Collect sdf based on certain columns\ncollect(select(sdf, c(\"x1\", \"x2\", \"x3\", \"x3\")))\n\n# Save a ggplot object\nggsave(\"/dbfs/path/to/save/plot.png\", plot = last_plot())"
         }
       ],
-      "id": "7hq81Brs",
-      "createdAt": 1719672826405,
-      "updatedAt": 1719672863428
+      "id": "dzgRJfdy",
+      "createdAt": 1721938360604,
+      "updatedAt": 1724520840202
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "Z7C4DS8E",
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "R theme_setup",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "# Tema de las gráficas\n\ntema <- theme_minimal() +\n\n        theme(text = element_text(family = \"Roboto\"),\n\n              # Plot title and subtitle\n              plot.title = element_text(face = \"bold\", hjust = 0.5, size = 18),\n              plot.subtitle = element_text(hjust = .5, size = 16),\n\n              # Legend\n              legend.title = element_blank(),\n              legend.position = \"right\",  \n              legend.text = element_text(size = 14, color = \"dimgray\"),\n              legend.spacing = unit(0.5, 'cm'),\n              legend.key.height= unit(0.5, 'cm'),\n              legend.key.width= unit(0.7, 'cm'),\n\n              # Axis\n              axis.text.x = element_text(size = 12, angle = 90, vjust = .5, hjust = 1),\n              axis.text.y = element_text(size = 12),\n              axis.title.x = element_text(face = \"bold\", size = 14),\n              axis.title.y = element_text(face = \"bold\", size = 14),\n              \n              # Strip\n              strip.text = element_text(size = 12),\n              strip.background = element_rect(fill = \"white\", colour = \"white\"),\n\n              # Panel\n              panel.grid.major = element_blank(),\n              panel.grid.minor = element_blank(),\n              plot.background = element_rect(color = \"white\", fill = \"white\"),\n\n              # Plot margin\n              plot.margin = margin(5, 5, 5, 5)\n              )\n\n# Paleta de colores\n\nkof_palette <- c(\n  \"firebrick1\",    # Kept from original\n  \"dodgerblue1\",   # Kept from original\n  \"gold\",          # Kept from original\n  \"skyblue\",       # Added for clear distinction\n  \"#E4007C\",       # Mexican pink \n  \"black\",\n  \"lightsalmon\",\n  \"red\"\n)\n\nkof_palette_extended <- c(\n  \"#808080\",      # gray\n  \"#00008B\",      # darkblue\n  \"#8B0000\",      # darkred\n  \"#FFD700\",      # gold\n  \"#87CEEB\",      # skyblue\n  \"#FF8C00\",      # darkorange\n  \"#E4007C\",      # Mexican pink\n  \"#000000\",      # black\n  \"#FFA07A\",      # lightsalmon\n  \"#FF0000\",      # red\n  \"#808000\",      # olive\n  \"#00BFFF\",      # deepskyblue\n  \"#9370DB\",      # mediumpurple\n  \"#32CD32\",      # limegreen\n  \"#F4A460\",      # sandybrown\n  \"#FF69B4\",      # hotpink\n  \"#000080\",      # navy\n  \"#A52A2A\",      # brown\n  \"#FF4500\",      # orangered\n  \"#20B2AA\",      # lightseagreen\n  \"#BDB76B\",      # darkkhaki\n  \"#8A2BE2\"       # blueviolet\n)\n\n\n\n\n# Definir tema\n\ntema <- theme_ipsum(axis_col = \"white\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"white\"),\n        panel.grid.major = element_line(colour = \"white\"),\n        panel.grid.minor = element_line(colour = \"white\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)\n\ntema.grid <- theme_ipsum(axis_col = \"#E0E0DD\") +\n    theme(\n        plot.title = element_text(size = 24, color = \"#1B2128\", face = 'bold'),\n        plot.subtitle = element_text(size = 14, color = \"#747577\"),\n        plot.caption = element_text(size = 11, color = \"#747577\", face = \"plain\"),\n        axis.title.x = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(t = .5, unit = \"cm\")),\n        axis.text.x = element_text(size = 12, color = \"#1B2128\"),\n        axis.title.y = element_text(size = 13, color = \"#1B2128\", face = \"bold\", hjust = .5, margin = margin(r = .5, unit = \"cm\")),\n        axis.text.y = element_text(size = 12, color = \"#1B2128\"),\n        legend.title = element_text(size = 13, color = \"#1B2128\", face = \"bold\"),\n        legend.text = element_text(size = 11, color = \"#1B2128\"),\n        legend.position = \"bottom\",\n        plot.margin = margin(1, 1, 1, 1, \"cm\"),\n        strip.text = element_text(color = \"#1B2128\", size = 13, face =\"bold\", hjust = .5),\n        panel.grid = element_line(colour = \"#E0E0DD\"),\n        panel.grid.major = element_line(colour = \"#E0E0DD\"),\n        panel.grid.minor = element_line(colour = \"#E0E0DD\"),\n        plot.background = element_rect(color = \"white\", fill = \"white\")\n)\n  \n# Definir colores\n\nlibrary(unikn)\n\ncolores.categorías <- c(\"#EB262C\", # Rojo\n                        \"#1B2128\", # Negro\n                        \"#1CCA6E\", # Verde\n                        \"#FFCF08\", # Amarillo\n                        \"#747577\", # Gris Oscuro\n                        \"#FF8400\", # Naranja\n                        \"#6F36C5\", # Morado\n                        \"#438EF7\", # Azul\n                        \"#F5025D\", # Magenta\n                        \"#FF8FAB\", # Rosa\n                        \"#E0E0DD\"  # Gris Claro\n                        ) \n\ncolores.semáforo <- c(\"#1CCA6E\", # Verde\n                      \"#FFCF08\", # Amarillo\n                      \"#FF8400\", # Naranja\n                      \"#EB262C\"  # Rojo\n                      ) \n\ncolores.riesgos <- c(\"#EB262C\",  # Rojo\n                      \"#1B2128\", # Negro\n                      \"#1CCA6E\", # Verde\n                      \"#438EF7\", # Azul\n                      \"#FF8FAB\", # Magenta\n                      \"#6F36C5\", # Morado\n                      \"#E0E0DD\", # Gris Claro\n                      \"#747577\"  # Gris Oscuro\n                     ) \n\ncolores.sprite <- c(\"#1CCA6E\",  # Verde\n                     \"#FFCF08\", # Amarillo\n                     \"#E0E0DD\",  # Gris claro\n                     \"#1B2128\" # Negro\n                     ) \n\ncolores.bars <- c(\"#1CCA6E\",  # Azul\n                  \"#438EF7\", # Azul\n                  \"#FFCF08\", # Amarillo\n                  \"#E0E0DD\"  # Gris claro\n                    ) \n\ncolores.fanta <- c(\"#FF8400\", # Naranja\n                   \"#6F36C5\", # Morado\n                   \"#1CCA6E\", # Verde\n                   \"#E0E0DD\"  # Gris claro\n                   ) \n\ncolores.coca <- c(\"#EB262C\", # Rojo\n                  \"#1B2128\", # Negro\n                  \"#E0E0DD\"  # Gris claro\n                  ) \n\nrojo.degradado <- usecol(c(\"#EB262C\", \"#FFCF08\", \"#FF8400\"), n = 4)\n\npaleta.degradada <- usecol(c(\"#438EF7\", \"#F5025D\"), n = 4)\n\nrosa.degradado <- usecol(c(\"#F5025D\", \"#FFFFFF\"), n = 4)\n\nsemaforo.degradado <- usecol(c(\"#EB262C\", \"#FFCF08\", \"#1CCA6E\"), n = 3)\n\n# Visualizar paletas de colores\n# seecol(colores.categorías, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(colores.semáforo, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(rojo.degradado, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(semaforo.degradado, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(colores.riesgos, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(colores.coca, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(colores.fanta, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(colores.sprite, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(rosa.degradado, col_brd = \"white\", lwd_brd = 5, title = \"\")\n# seecol(paleta.degradada, col_brd = \"white\", lwd_brd = 5, title = \"\")"
+        }
+      ],
+      "id": "ZxM3UH8k",
+      "createdAt": 1721938539783,
+      "updatedAt": 1724520854854
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "Z7C4DS8E",
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "R notebook tempalte",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "# Databricks notebook source\n# MAGIC %md\n# MAGIC ## Project\n# MAGIC ### Date\n# MAGIC #### Notebook pipeline (EDA, ETL, etc.)\n# MAGIC ##### José Ángel Torrens Hernández\n# MAGIC ###### jose.torrens@kof.com.mx\n# MAGIC ###### Cluster: Cluster name\n# MAGIC - Cluster ID\n\n# COMMAND ----------\n\n# MAGIC %md\n# MAGIC ## Configuration\n\n# COMMAND ----------\n\n# MAGIC %md\n# MAGIC #### Install packages\n\n# COMMAND ----------\n\n# Install packages\n\nif(!require(requiRements)){install.packages(\"requiRements\", version = \"0.0.3\", quiet = TRUE); library(requiRements)} \nif(!require(glue)){install.packages(\"glue\", version = \"1.7.0\", quiet = TRUE); library(glue)}\n\ncluster_id <- \"cluster_id\"\n\nuser_mail <- \"jose.torrens@kof.com.mx\"\n\nrepo <- \"db_template\"\n\nproject <- \"project_name\"\n\nworkspace_path <- glue::glue(\"/Workspace/Users/{user_mail}/{repo}/{project_name}\")\n\nrequirements <- paste0(workspace_path,\"/helpers/requiRements.txt\")\n\nrequiRements::install(path_to_requirements = requirements, quiet = TRUE)\n\n# Install packages\n\npackages <- c(\n  'data.table', 'extrafont', 'ggrepel', 'ggridges', 'ggthemes', 'glue',\n  'hrbrthemes', 'janitor', 'lubridate', 'RColorBrewer', 'readxl',\n  'scales', 'sparklyr', 'sysfonts', 'tidytext', 'tidyverse', 'unikn', 'viridis'\n)\n\nsapply(packages, function(x) {\n  if (!x %in% rownames(installed.packages())) {\n    install.packages(x)\n  }\n  require(x, character.only = TRUE)\n})\n\n# Install packages\n\npkgLoad <- function(packages = \"favourites\") {\n  \n  if (length(packages) == 1L && packages == \"favourites\") {\n    packages <- c('data.table', 'extrafont', 'ggrepel', 'ggridges', 'ggthemes', 'glue', 'hrbrthemes', 'janitor', 'lubridate', \n                  'RColorBrewer', 'readxl', 'scales', 'sparklyr', 'sysfonts', 'tidytext', 'tidyverse', 'unikn', 'viridis')\n  }\n  \n  packagecheck <- match(packages, utils::installed.packages()[,1])\n  packagestoinstall <- packages[is.na(packagecheck)]\n  \n  if (length(packagestoinstall) > 0L) {\n    utils::install.packages(packagestoinstall, repos = \"http://cran.csiro.au\")\n  } else {\n    print(\"All requested packages already installed\")\n  }\n  \n  for (package in packages) {\n    suppressPackageStartupMessages(\n      library(package, character.only = TRUE, quietly = TRUE)\n    )\n  }\n}\n\npkgLoad(<list of packages>)\n\n# COMMAND ----------\n\n# MAGIC %md\n# MAGIC #### Sparklyr configuration\n\n# COMMAND ----------\n\n#  Sparklyr configuration\n\nconfig <-  list(\n  spark.sql.shuffle.partitions = 200,\n  spark.executor.memory = \"32g\",\n  spark.driver.memory = \"8g\",\n  spark.executor.cores = 8\n)\n\nsc <- sparklyr::spark_connect(method = \"databricks\", \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t config = config,\n                             cluster_id = glue::glue(\"{cluester_id}\"))\n\nprint(sc$config)\n\n# COMMAND ----------\n\n# MAGIC %md\n# MAGIC #### Helpers\n\n# COMMAND ----------\n\n# Helpers\n\nsource(paste0(workspace_path,\"/helpers/theme_setup.R\"))\n\n# COMMAND ----------\n\n# MAGIC %md\n# MAGIC #### Widgets\n\n# COMMAND ----------\n\n# Widgets\n\nsource(paste0(workspace_path,\"/helpers/theme_setup.R\"))"
+        }
+      ],
+      "id": "dXXx2P9x",
+      "createdAt": 1724463068763,
+      "updatedAt": 1724520861864
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "7brm9r2t",
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "pySpark  workflow",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "python",
+          "value": "# Create a view of the previous result so we can run more queries on it\ndf.createOrReplaceTempView(\"df\")\n\n# Drop the column 'variable' from the DataFrame\ndf = df.drop('variable')"
+        }
+      ],
+      "id": "LiaVS-Lr",
+      "createdAt": 1724519361510,
+      "updatedAt": 1724520900091
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "LloOeJ8a",
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "bash-databricks",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "sh",
+          "value": "# Check mounted files\n%fs ls /mnt/stacdatalabqa01/testing/testing_torrens/d2c_vault"
+        }
+      ],
+      "id": "KG-BqZ1U",
+      "createdAt": 1724519579588,
+      "updatedAt": 1724521471347
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "kUTrDM6K",
       "tagsIds": [
+        "LloOeJ8a"
+      ],
+      "description": null,
+      "name": "commands",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "sh",
+          "value": "# View the registration details of a domain (e.g., whois google.com)\nwhois \n\n# Prompt your Mac to speak out loud whatever you write after the say prompt (e.g., say Hello My Name is Alf)\nsay"
+        }
+      ],
+      "id": "_Lu8cdqq",
+      "createdAt": 1724520176961,
+      "updatedAt": 1724520527587
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "LloOeJ8a",
+        "2lzr2AyY"
+      ],
+      "description": null,
+      "name": "promoApp",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "sh",
+          "value": "# Change directory to GitHub folder\n% cd ~/Documents/GitHub \n\n# Clone the repository from Azure DevOps\n% git clone git@ssh.dev.azure.com:v3/KOF-Data-Lake/PlatformAnalytics/PlatformAnalytics\n\n# Change directory to the cloned repository\n% cd ~/Documents/GitHub/PlatformAnalytics\n% ls\n\n# Check the status of the repository\n% git status\n\n# List all branches, including remote branches\n% git branch -a\n\n# Create and switch to a new branch from the remote branch 'LLMs_Corrected'\n% git checkout -b LLMs_Corrected origin/LLMs_Corrected\n\n# Switch to another branch by name\n% git checkout branch-name\n\n# Check the status of the repository again\n% git status\n% ls\n\n# Navigate to the 'LLMs' directory\n% cd LLMs \n% ls\n\n# Navigate to the 'PromoApp' directory\n% cd PromoApp \n% ls\n\n# Create a virtual environment with a specific Python version\n% virtualenv --python=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 promoapp_env\n\n# Activate the virtual environment\n% source promoapp_env/bin/activate\n% source .venv/bin/activate\n\n# Check which Python is being used\n% which python           \n\n# Install the required packages from the requirements.txt file\n% pip install -r requirements.txt\n\n# Run the application\n% wave run src.app\n\n# Open the app on localhost"
+        }
+      ],
+      "id": "ChtlYojY",
+      "createdAt": 1724520572930,
+      "updatedAt": 1724521478948
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
         "7brm9r2t",
-        "luwo8mth"
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "Py notebook",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "python",
+          "value": ""
+        }
+      ],
+      "id": "xZ9ggEup",
+      "createdAt": 1724520768956,
+      "updatedAt": 1724520908383
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "LloOeJ8a",
+        "7brm9r2t"
       ],
       "description": null,
       "name": "python",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "markdown",
-          "value": "% python3 --version\n\n% python3 -m pip install pandas\n\n% python3 -m pip install numpy\n\n~ % jupyter notebook"
+          "language": "sh",
+          "value": "# Upgrade pip to the latest version\npip install --upgrade pip\n\n# Reinstall the dependencies from the requirements.txt file\npip install -r requirements.txt\n\n# Install additional packages\npip install pandas\npip install numpy\n\n# Create a new virtual environment using Python 3\npython3 -m venv my_project_name\n\n# Activate the new virtual environment\nsource my_project_name/bin/activate\n\n# Deactivate the virtual environment when done\ndeactivate\n\n# Delete the virtual environment\nrm -rf my_project_name\n\n# Check the Python version\npython3 --version\n\n# Start Jupyter Notebook\njupyter notebook"
         }
       ],
-      "id": "W69caEXo",
-      "createdAt": 1719672891312,
-      "updatedAt": 1719672900737
+      "id": "5WqxN82f",
+      "createdAt": 1724520979647,
+      "updatedAt": 1724521020019
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Wc_b5XkS",
+      "tagsIds": [
+        "7brm9r2t",
+        "LOf0lSdq"
+      ],
+      "description": null,
+      "name": "mount_point",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "python",
+          "value": "service_credential = dbutils.secrets.get('kvdatalab01qa', 'kv-secret-sp-adb-stacdatalabqa01-clientsecret') # Secret\n\ncontenedor_name = \"contenedor_name\"\n\nspark.conf.set(\"fs.azure.account.auth.type.stacdatalabqa01.dfs.core.windows.net\", \"OAuth\")\nspark.conf.set(\"fs.azure.account.oauth.provider.type.stacdatalabqa01.dfs.core.windows.net\", \"org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider\")\nspark.conf.set(\"fs.azure.account.oauth2.client.id.stacdatalabqa01.dfs.core.windows.net\", \"983b2091-439a-4f56-bcc8-c81d2b0420c0\")\nspark.conf.set(\"fs.azure.account.oauth2.client.secret.stacdatalabqa01.dfs.core.windows.net\", service_credential)\nspark.conf.set(\"fs.azure.account.oauth2.client.endpoint.stacdatalabqa01.dfs.core.windows.net\", \"https://login.microsoftonline.com/7094d542-3815-4c82-b1d5-6917d0443cf4/oauth2/token\")\n\nconfig = {\n        \"fs.azure.account.auth.type\": \"OAuth\",\n        \"fs.azure.account.oauth.provider.type\": \"org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider\",\n        \"fs.azure.account.oauth2.client.id\": \"983b2091-439a-4f56-bcc8-c81d2b0420c0\",\n        \"fs.azure.account.oauth2.client.secret\": service_credential,\n        \"fs.azure.account.oauth2.client.endpoint\": \"https://login.microsoftonline.com/7094d542-3815-4c82-b1d5-6917d0443cf4/oauth2/token\",\n        \"fs.azure.createRemoteFileSystemDuringInitialization\": \"true\"\n    }\n\ndbutils.fs.ls(\"abfss://contenedor_name@stacdatalabqa01.dfs.core.windows.net/\")\n\ndbutils.fs.mount(source = \"abfss://contenedor_name@stacdatalabqa01.dfs.core.windows.net/\", mount_point = \"/mnt/stacdatalabqa01/contenedor_name\", extra_configs = config)"
+        }
+      ],
+      "id": "Oh5LHaAS",
+      "createdAt": 1724521298110,
+      "updatedAt": 1724521331777
     }
   ],
   "tags": [
@@ -443,40 +580,40 @@
       "updatedAt": 1667794838275
     },
     {
-      "name": "commands",
-      "id": "ZuysXm8A",
-      "createdAt": 1667826598871,
-      "updatedAt": 1667826598871
-    },
-    {
-      "name": "git & github",
-      "id": "CAuKhm2A",
-      "createdAt": 1668233892571,
-      "updatedAt": 1668233892571
-    },
-    {
       "name": "LaTex",
       "id": "rNAkcP8S",
       "createdAt": 1710638003175,
       "updatedAt": 1710638003175
     },
     {
-      "name": "La",
-      "id": "vzuwza1B",
-      "createdAt": 1710638007637,
-      "updatedAt": 1710638007637
-    },
-    {
-      "name": "python3",
-      "id": "luwo8mth",
-      "createdAt": 1718748130717,
-      "updatedAt": 1718748130717
-    },
-    {
       "name": "python",
       "id": "7brm9r2t",
       "createdAt": 1718748138001,
       "updatedAt": 1718748138001
+    },
+    {
+      "name": "databricks",
+      "id": "LOf0lSdq",
+      "createdAt": 1722575148604,
+      "updatedAt": 1722575148604
+    },
+    {
+      "name": "git",
+      "id": "GBgQvE41",
+      "createdAt": 1724520255801,
+      "updatedAt": 1724520255801
+    },
+    {
+      "name": "shell",
+      "id": "LloOeJ8a",
+      "createdAt": 1724520389186,
+      "updatedAt": 1724520389186
+    },
+    {
+      "name": "local",
+      "id": "2lzr2AyY",
+      "createdAt": 1724520711436,
+      "updatedAt": 1724520711436
     }
   ]
 }
