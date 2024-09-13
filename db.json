@@ -494,7 +494,7 @@
       ],
       "id": "ChtlYojY",
       "createdAt": 1724520572930,
-      "updatedAt": 1725292021930
+      "updatedAt": 1725757792245
     },
     {
       "isDeleted": false,
@@ -579,6 +579,60 @@
       "id": "wpo7gPEv",
       "createdAt": 1724523246962,
       "updatedAt": 1724601973082
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "KPnlb64o",
+      "tagsIds": [],
+      "description": null,
+      "name": "bash",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "find . -type f \\( -name \"*.xdv\" -o -name \"*.aux\" -o -name \"*.log\" -o -name \"*.lot\" -o -name \"*.out\" -o -name \"*.ilg\" -o -name \"*.idx\" -o -name \"*.ind\" -o -name \"*.toc\" -o -name \"*.bbl\" -o -name \"*.blg\" -o -name \"*.fdb_latexmk\" -o -name \"*.fls\" -o -name \"*.lof\" -o -name \"*.synctex(busy)\" -o -name \"*.synctex.gz\" \\) -delete"
+        }
+      ],
+      "id": "94HMb35Y",
+      "createdAt": 1726106508327,
+      "updatedAt": 1726106918113
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "KPnlb64o",
+      "tagsIds": [],
+      "description": null,
+      "name": "bibtex-tidy",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "% FlamingTempura/bibtex-tidy\n% https://github.com/FlamingTempura/bibtex-tidy?tab=readme-ov-file\n\n% To format a .bib file\n% bibtex-tidy references.bib\n\n% To remove the url parametrer\n% bibtex-tidy --omit=url references.bib\n\n% Enclose all property values in braces\n% bibtex-tidy --curly references.bib\n\n% Strip quotes and braces from numeric/month values\n% bibtex-tidy --numeric references.bib\n\n% Convert all months to three letter abbreviations\n% bibtex-tidy --months references.bib\n\n% Indent all fields with the specified number of spaces\n% bibtex-tidy --space=4 references.bib\n\n% Indent all fields with a tab\n% bibtex-tidy --tab references.bib\n\n% Insert whitespace between fields and values so that values are visually aligned\n% bibtex-tidy --align=14 references.bib\n\n% Sort entries by the specified field names\n% bibtex-tidy --sort references.bib\n% --sort (sort by citation key)\n% --sort=-year,name (sort year descending then name ascending)\n% --sort=name,year\n\n% Where values are all caps, make them title case\n% bibtex-tidy --drop-all-caps references.bib\n\n% Where an entire value is enclosed in double braces, remove the extra braces\n% bibtex-tidy --strip-enclosing-braces references.bib\n\n% Use\n% bibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps references.bib\n% bibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps r-packages.bib\n\n% Use -m to modify the original .bib file"
+        }
+      ],
+      "id": "k-28SYCT",
+      "createdAt": 1726106952802,
+      "updatedAt": 1726163245317
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "KPnlb64o",
+      "tagsIds": [],
+      "description": null,
+      "name": "bash",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "pre-commit run --all-files"
+        }
+      ],
+      "id": "cekGG6ct",
+      "createdAt": 1726108804260,
+      "updatedAt": 1726108810657
     }
   ],
   "tags": [
