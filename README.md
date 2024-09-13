@@ -1,4 +1,4 @@
-# Personal code snippet library.
+# Personal code snippet library
 
 The library contains an extensive searchable collection of snippets in various programming languages. To read the snippets, you can use a code snippets manager, such as ``massCode`` or ``SnippetsLab``. 
 
