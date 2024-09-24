@@ -30,7 +30,8 @@
       "defaultLanguage": "plain_text",
       "id": "KPnlb64o",
       "createdAt": 1703835264009,
-      "updatedAt": 1703835272800
+      "updatedAt": 1703835272800,
+      "index": 2
     },
     {
       "name": "Databricks",
@@ -40,7 +41,8 @@
       "defaultLanguage": "plain_text",
       "id": "Wc_b5XkS",
       "createdAt": 1721938326535,
-      "updatedAt": 1721938335724
+      "updatedAt": 1721938335724,
+      "index": 3
     }
   ],
   "snippets": [
@@ -151,13 +153,13 @@
       "content": [
         {
           "label": "commands",
-          "language": "markdown",
+          "language": "sh",
           "value": "# Install\npip install html2excel\n\n# Code\npython3 -m html2excel input_file output_file\n\n# Example\npython3 -m html2excel \"/Users/jtorrensh/Desktop/wget2003/1-01.html\" \"/Users/jtorrensh/Desktop/wget2003/output/1-01.csv\"\n\n# Using as package\nfrom html2excel import ExcelParser\n\ninput_file = '/tmp/text_file.html'\noutput_file = '/tmp/converted_file.xlsx'\n\nparser = ExcelParser(input_file)\nparser.to_excel(output_file)"
         }
       ],
       "id": "3UXcG9fP",
       "createdAt": 1668023286844,
-      "updatedAt": 1724521155538
+      "updatedAt": 1726424583492
     },
     {
       "isDeleted": false,
@@ -269,7 +271,7 @@
       "tagsIds": [
         "rNAkcP8S"
       ],
-      "description": null,
+      "description": "Thesis Template Latex Commands",
       "name": "thesis",
       "content": [
         {
@@ -285,7 +287,7 @@
       ],
       "id": "ppG31YcS",
       "createdAt": 1703835274418,
-      "updatedAt": 1724521232676
+      "updatedAt": 1726424640907
     },
     {
       "isDeleted": false,
@@ -489,12 +491,12 @@
         {
           "label": "Fragment 1",
           "language": "sh",
-          "value": "# List all branches, including remote branches\n% git branch -a\n\n# List the current branch\n% git branch\n\n# check current commit\n% git log -1\n\n# Create and switch to a new branch from the remote branch 'LLMs_Corrected'\n% git checkout -b LLMs_Corrected origin/LLMs_Corrected\n\n# Switch to another branch by name\n% git checkout branch-name\n\n# Check the status of the repository again\n% git status\n% ls\n\n# Navigate to the 'LLMs' directory\n% cd LLMs \n% ls\n\n# Navigate to the 'PromoApp' directory\n% cd PromoApp \n% ls\n\n# Create a virtual environment with a specific Python version\n% virtualenv --python=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 promoapp_env\n\n# Activate the virtual environment\n% source promoapp_env/bin/activate\n% source .venv/bin/activate\n\n# Check which Python is being used\n% which python           \n\n# Install the required packages from the requirements.txt file\n% pip install -r requirements.txt\n\n# Run the application\n% wave run src.app\n\n# Open the app on localhost"
+          "value": "# List all branches, including remote branches\n% git branch -a\n\n# List the current branch\n% git branch\n\n# check current commit\n% git log -1\n\n# Create and switch to a new branch from the remote branch 'LLMs_Corrected'\n% git checkout -b LLMs_Corrected origin/LLMs_Corrected\n\n# Switch to another branch by name\n% git checkout branch-name\n\n# Check the status of the repository again\n% git status\n% ls\n\n# Navigate to the 'LLMs' directory\n% cd LLMs \n% ls\n\n# Navigate to the 'PromoApp' directory\n% cd PromoApp \n% ls\n\n# Create a virtual environment with a specific Python version\n% virtualenv --python=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 promoapp_env\n\n# Activate the virtual environmentq\n% source promoapp_env/bin/activate\n% source .venv/bin/activate\n\n# Check which Python is being used\n% which python           \n\n# Install the required packages from the requirements.txt file\n% pip install -r requirements.txt\n\n# Run the application\n% wave run src.app"
         }
       ],
       "id": "ChtlYojY",
       "createdAt": 1724520572930,
-      "updatedAt": 1725757792245
+      "updatedAt": 1726424678932
     },
     {
       "isDeleted": false,
@@ -525,18 +527,18 @@
         "LloOeJ8a",
         "7brm9r2t"
       ],
-      "description": null,
+      "description": "Python bach commands",
       "name": "python",
       "content": [
         {
           "label": "Fragment 1",
           "language": "sh",
-          "value": "# Upgrade pip to the latest version\npip install --upgrade pip\n\n# Reinstall the dependencies from the requirements.txt file\npip install -r requirements.txt\n\n# Install additional packages\npip install pandas\npip install numpy\n\n# Create a new virtual environment using Python 3\npython3 -m venv my_project_name\n\n# Activate the new virtual environment\nsource my_project_name/bin/activate\n\n# Deactivate the virtual environment when done\ndeactivate\n\n# Delete the virtual environment\nrm -rf my_project_name\n\n# Check the Python version\npython3 --version\n\n# Start Jupyter Notebook\njupyter notebook"
+          "value": "# Create a new virtual environment using Python 3\npython3 -m venv my_project_name\n\n# Activate the new virtual environment\nsource my_project_name/bin/activate\n\n# Deactivate the virtual environment when done\ndeactivate\n\n# Delete the virtual environment\nrm -rf my_project_name\n\n# Check the Python version\npython3 --version\n\n# Upgrade pip to the latest version\npip install --upgrade pip\n\n# Reinstall the dependencies from the requirements.txt file\npip install -r requirements.txt\n\n# Install additional packages\npip install pandas\npip install numpy"
         }
       ],
       "id": "5WqxN82f",
       "createdAt": 1724520979647,
-      "updatedAt": 1724521020019
+      "updatedAt": 1726424562459
     },
     {
       "isDeleted": false,
@@ -547,7 +549,7 @@
         "LOf0lSdq"
       ],
       "description": null,
-      "name": "mount_point",
+      "name": "mount-point",
       "content": [
         {
           "label": "Fragment 1",
@@ -557,7 +559,7 @@
       ],
       "id": "Oh5LHaAS",
       "createdAt": 1724521298110,
-      "updatedAt": 1724521331777
+      "updatedAt": 1726424689679
     },
     {
       "isDeleted": false,
@@ -583,56 +585,83 @@
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "KPnlb64o",
-      "tagsIds": [],
-      "description": null,
-      "name": "bash",
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "1JBWUodP"
+      ],
+      "description": "Pre Commitm configuration",
+      "name": "pre-commit",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "plain_text",
-          "value": "find . -type f \\( -name \"*.xdv\" -o -name \"*.aux\" -o -name \"*.log\" -o -name \"*.lot\" -o -name \"*.out\" -o -name \"*.ilg\" -o -name \"*.idx\" -o -name \"*.ind\" -o -name \"*.toc\" -o -name \"*.bbl\" -o -name \"*.blg\" -o -name \"*.fdb_latexmk\" -o -name \"*.fls\" -o -name \"*.lof\" -o -name \"*.synctex(busy)\" -o -name \"*.synctex.gz\" \\) -delete"
+          "language": "sh",
+          "value": "# Install the pre-commit package using pip\npip install pre-commit\n\n# Display the installed version of pre-commit\npre-commit --version\n\n# Run all pre-commit hooks on all files in the repository\npre-commit run --all-files\n\n# Perform a full integrity check on the Git repository\ngit fsck --full`\n\n# Format and indent the LaTeX file, overwriting the original file\nlatexindent.pl r-packages.tex -o r-packages.tex"
         }
       ],
       "id": "94HMb35Y",
       "createdAt": 1726106508327,
-      "updatedAt": 1726106918113
+      "updatedAt": 1726424664127
     },
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "KPnlb64o",
-      "tagsIds": [],
-      "description": null,
-      "name": "bibtex-tidy",
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "LloOeJ8a"
+      ],
+      "description": "Hugo Landing Page",
+      "name": "hugo",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "plain_text",
-          "value": "% FlamingTempura/bibtex-tidy\n% https://github.com/FlamingTempura/bibtex-tidy?tab=readme-ov-file\n\n% To format a .bib file\n% bibtex-tidy references.bib\n\n% To remove the url parametrer\n% bibtex-tidy --omit=url references.bib\n\n% Enclose all property values in braces\n% bibtex-tidy --curly references.bib\n\n% Strip quotes and braces from numeric/month values\n% bibtex-tidy --numeric references.bib\n\n% Convert all months to three letter abbreviations\n% bibtex-tidy --months references.bib\n\n% Indent all fields with the specified number of spaces\n% bibtex-tidy --space=4 references.bib\n\n% Indent all fields with a tab\n% bibtex-tidy --tab references.bib\n\n% Insert whitespace between fields and values so that values are visually aligned\n% bibtex-tidy --align=14 references.bib\n\n% Sort entries by the specified field names\n% bibtex-tidy --sort references.bib\n% --sort (sort by citation key)\n% --sort=-year,name (sort year descending then name ascending)\n% --sort=name,year\n\n% Where values are all caps, make them title case\n% bibtex-tidy --drop-all-caps references.bib\n\n% Where an entire value is enclosed in double braces, remove the extra braces\n% bibtex-tidy --strip-enclosing-braces references.bib\n\n% Use\n% bibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps references.bib\n% bibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps r-packages.bib\n\n% Use -m to modify the original .bib file"
+          "language": "sh",
+          "value": "# Create a new Hugo site base on https://github.com/serkodev/holy\nhugo new site pptrrns\n\n# Navigate to the site directory\ncd pptrrns\n\n# Clone the Holy theme repository into the themes folder\ngit clone https://github.com/serkodev/holy.git themes/holy\n\n# Edit the config.toml file to set the theme to Holy\n# Note: This step requires manual editing or using a text editor in the next line\n# Uncomment the following line if you want to use `sed` to automate the change\n# sed -i 's/theme = \"\"/theme = \"holy\"/' config.toml\n\n# Edit the config.toml file to use the Holy theme. \n# Open config.toml in your preferred text editor and add or update the theme setting:\ntheme = \"holy\"\n\n# Create a new post\nhugo new posts/my-first-post.md\n\n# Build and serve the site locally\nhugo server\n\n# Once ready to publish, build the site\nhugo"
         }
       ],
-      "id": "k-28SYCT",
-      "createdAt": 1726106952802,
-      "updatedAt": 1726163245317
+      "id": "JMJM4-qE",
+      "createdAt": 1726424426048,
+      "updatedAt": 1726431446778
     },
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "KPnlb64o",
-      "tagsIds": [],
-      "description": null,
-      "name": "bash",
+      "folderId": "kUTrDM6K",
+      "tagsIds": [
+        "1JBWUodP"
+      ],
+      "description": "Bib Tidy",
+      "name": "bib-tidy",
       "content": [
         {
           "label": "Fragment 1",
-          "language": "plain_text",
-          "value": "pre-commit run --all-files"
+          "language": "sh",
+          "value": "# bib-tidy\n\n# FlamingTempura/bibtex-tidy\nhttps://github.com/FlamingTempura/bibtex-tidy?tab=readme-ov-file\n\n# Install bibtex-tidy globally using npm\nnpm install -g bibtex-tidy\n\n# To format a .bib file\nbibtex-tidy references.bib\n\n# To remove the url parametrer\nbibtex-tidy --omit=url references.bib\n\n# Enclose all property values in braces\nbibtex-tidy --curly references.bib\n\n# Strip quotes and braces from numeric/month values\nbibtex-tidy --numeric references.bib\n\n# Convert all months to three letter abbreviations\nbibtex-tidy --months references.bib\n\n# Indent all fields with the specified number of spaces\nbibtex-tidy --space=4 references.bib\n\n# Indent all fields with a tab\nbibtex-tidy --tab references.bib\n\n# Insert whitespace between fields and values so that values are visually aligned\nbibtex-tidy --align=14 references.bib\n\n# Sort entries by the specified field names\nbibtex-tidy --sort references.bib\n--sort (sort by citation key)\n--sort=-year,name (sort year descending then name ascending)\n--sort=name,year\n\n# Where values are all caps, make them title case\nbibtex-tidy --drop-all-caps references.bib\n\n# Where an entire value is enclosed in double braces, remove the extra braces\nbibtex-tidy --strip-enclosing-braces references.bib\n\n# Use\nbibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps file.bib\n\nbibtex-tidy --curly --numeric --months --space=4 --tab --strip-enclosing-braces --sort --drop-all-caps file.bib\n\nbibtex-tidy --curly --numeric --months --modify --space=4 --tab --strip-enclosing-braces --sort=key --duplicates=doi --omit=abstract,keywords --drop-all-caps --sort-fields=author,title,year --remove-empty-fields --escape --encode-urls file.bib"
         }
       ],
-      "id": "cekGG6ct",
-      "createdAt": 1726108804260,
-      "updatedAt": 1726108810657
+      "id": "03GH3aCH",
+      "createdAt": 1726424598560,
+      "updatedAt": 1726424620154
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DQZWqrP5",
+      "tagsIds": [
+        "Z7C4DS8E",
+        "OJvlNdx5"
+      ],
+      "description": null,
+      "name": "table()",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "r",
+          "value": "# A better version of table() using tabyl from janitor package\nlibrary(janitor)\nlibrary(dplyr)\n\n# Create a tabyl table and format it with adorn_* functions\nmtcars %>%\n  tabyl(gear, cyl) %>%             # Count combinations of 'gear' and 'cyl'\n  adorn_totals(\"col\") %>%          # Add column totals\n  adorn_percentages(\"row\") %>%     # Calculate row-wise percentages\n  adorn_pct_formatting(digits = 2) %>% # Format percentages with 2 decimal places\n  adorn_ns() %>%                   # Show counts alongside percentages\n  adorn_title()                    # Add a title to the table"
+        }
+      ],
+      "id": "CDAb_kYR",
+      "createdAt": 1726424697848,
+      "updatedAt": 1726424738915
     }
   ],
   "tags": [
@@ -689,6 +718,12 @@
       "id": "2lzr2AyY",
       "createdAt": 1724520711436,
       "updatedAt": 1724520711436
+    },
+    {
+      "name": "bash",
+      "id": "1JBWUodP",
+      "createdAt": 1726424609948,
+      "updatedAt": 1726424609948
     }
   ]
 }
